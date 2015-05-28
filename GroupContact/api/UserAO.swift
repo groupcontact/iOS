@@ -18,7 +18,7 @@ struct UserAO: JSONConvertable {
     func toJSON() -> String {
         var dict = [String: AnyObject]()
         if let id = uid {
-            dict["uid"] = NSNumber(longLong: uid!)
+            dict["id"] = NSNumber(longLong: uid!)
         }
         dict["name"] = name
         dict["phone"] = phone
@@ -33,7 +33,7 @@ struct UserAO: JSONConvertable {
     
     // 从JSON对象中生成对象
     static func fromJSON(json: JSON) -> JSONConvertable {
-        return UserAO(uid: json["uid"].asInt64,
+        return UserAO(uid: json["id"].asInt64,
             name: json["name"].asString!,
             phone: json["phone"].asString!,
             ext: json["ext"].asString!)

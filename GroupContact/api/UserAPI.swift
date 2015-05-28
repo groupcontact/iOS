@@ -73,7 +73,7 @@ class UserAPI {
     
     // 列举用户添加的好友
     class func listFriend(uid: Int64, callback: ([UserAO]) -> ()) {
-        let url = "\(Let.BASE_URL)users/\(uid)/friends"
+        let url = "\(Let.BASE_URL)/users/\(uid)/friends"
         Req.get(url) {
             var result = [UserAO]()
             if let json = $0 {
@@ -83,7 +83,6 @@ class UserAPI {
             }
             callback(result)
         }
-        
     }
     
     // add a new friend

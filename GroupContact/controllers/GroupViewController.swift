@@ -3,9 +3,11 @@ import UIKit
 /*
  * 展示用户加入的群组列表
  */
-class GroupViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class GroupViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak var searchText: UISearchBar!
+    
+    var houseRefreshControl: CBStoreHouseRefreshControl?
     
     // 群组列表
     var groups = [GroupAO]() {
@@ -20,6 +22,12 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 下拉刷新的相关配置
+        houseRefreshControl = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self,
+            refreshAction: "refreshData", plist: "storehouse", color: UIColor.blackColor(), lineWidth: CGFloat(2),
+            dropHeight: CGFloat(80), scale: CGFloat(1), horizontalRandomness: CGFloat(150), reverseLoadingAnimation: false,
+            internalAnimationFactor: CGFloat(0.7))
         
         // tableView基本设置
         tableView.dataSource = self
@@ -37,6 +45,22 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         }
     }
     
+    func refreshData() {
+        UserAPI.listGroup(Var.uid) {
+            self.groups = $0
+            Var.groups = $0
+            self.houseRefreshControl?.finishingLoading()
+        }
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.houseRefreshControl?.scrollViewDidScroll()
+    }
+    
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.houseRefreshControl?.scrollViewDidEndDragging()
+    }
+    
     // 目前只有一行
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1;
@@ -49,10 +73,11 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
     
     // 具体行的展示
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("nameDesc", forIndexPath: indexPath) as! GroupTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("nameDesc", forIndexPath: indexPath) as! UITableViewCell
         
         let group = groups[indexPath.row]
-        cell.group = group
+        cell.textLabel?.text = group.name
+        cell.detailTextLabel?.text = group.desc
         
         return cell
     }
@@ -68,8 +93,9 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
             if identifier == "showUserList" {
                 if let ulv = segue.destinationViewController as? UserListViewController {
                     if let tableView = sender as? UITableView {
-                        ulv.title = groups[tableView.indexPathForSelectedRow()!.row].name
-                        ulv.gid = groups[tableView.indexPathForSelectedRow()!.row].gid
+                        let group = groups[tableView.indexPathForSelectedRow()!.row]
+                        ulv.title = group.name
+                        ulv.gid = group.gid
                     }
                 }
             }

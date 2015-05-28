@@ -24,10 +24,12 @@
 		FD3E8DD61B16AB3B00FD3E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD3E8DBF1B16AB3B00FD3E0B /* Main.storyboard */; };
 		FD3E8DD71B16AB3B00FD3E0B /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC11B16AB3B00FD3E0B /* Alamofire.swift */; };
 		FD3E8DD81B16AB3B00FD3E0B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC31B16AB3B00FD3E0B /* MBProgressHUD.m */; };
-		FD3E8DDB1B16AB3B00FD3E0B /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC81B16AB3B00FD3E0B /* GroupTableViewCell.swift */; };
 		FD3E8DDD1B16C14A00FD3E0B /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DDC1B16C14A00FD3E0B /* json.swift */; };
 		FD3E8DDF1B16C40900FD3E0B /* Req.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DDE1B16C40900FD3E0B /* Req.swift */; };
 		FD3E8DE11B16D76C00FD3E0B /* JSONUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DE01B16D76C00FD3E0B /* JSONUtils.swift */; };
+		FD3E8DE61B16FD0E00FD3E0B /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DE31B16FD0E00FD3E0B /* BarItem.m */; };
+		FD3E8DE71B16FD0E00FD3E0B /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DE51B16FD0E00FD3E0B /* CBStoreHouseRefreshControl.m */; };
+		FD3E8DEB1B17092200FD3E0B /* storehouse.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD3E8DEA1B17092200FD3E0B /* storehouse.plist */; };
 		FD42A30D1AECB218003495C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A30C1AECB218003495C3 /* AppDelegate.swift */; };
 		FD42A3141AECB218003495C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD42A3131AECB218003495C3 /* Images.xcassets */; };
 		FD42A3171AECB218003495C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD42A3151AECB218003495C3 /* LaunchScreen.xib */; };
@@ -65,10 +67,14 @@
 		FD3E8DC11B16AB3B00FD3E0B /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		FD3E8DC21B16AB3B00FD3E0B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		FD3E8DC31B16AB3B00FD3E0B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		FD3E8DC81B16AB3B00FD3E0B /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		FD3E8DDC1B16C14A00FD3E0B /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		FD3E8DDE1B16C40900FD3E0B /* Req.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Req.swift; sourceTree = "<group>"; };
 		FD3E8DE01B16D76C00FD3E0B /* JSONUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUtils.swift; sourceTree = "<group>"; };
+		FD3E8DE21B16FD0E00FD3E0B /* BarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarItem.h; sourceTree = "<group>"; };
+		FD3E8DE31B16FD0E00FD3E0B /* BarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarItem.m; sourceTree = "<group>"; };
+		FD3E8DE41B16FD0E00FD3E0B /* CBStoreHouseRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStoreHouseRefreshControl.h; sourceTree = "<group>"; };
+		FD3E8DE51B16FD0E00FD3E0B /* CBStoreHouseRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStoreHouseRefreshControl.m; sourceTree = "<group>"; };
+		FD3E8DEA1B17092200FD3E0B /* storehouse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouse.plist; sourceTree = "<group>"; };
 		FD42A3071AECB218003495C3 /* GroupContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD42A30B1AECB218003495C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD42A30C1AECB218003495C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +144,10 @@
 		FD3E8DC01B16AB3B00FD3E0B /* third */ = {
 			isa = PBXGroup;
 			children = (
+				FD3E8DE21B16FD0E00FD3E0B /* BarItem.h */,
+				FD3E8DE31B16FD0E00FD3E0B /* BarItem.m */,
+				FD3E8DE41B16FD0E00FD3E0B /* CBStoreHouseRefreshControl.h */,
+				FD3E8DE51B16FD0E00FD3E0B /* CBStoreHouseRefreshControl.m */,
 				FD3E8DC11B16AB3B00FD3E0B /* Alamofire.swift */,
 				FD3E8DC21B16AB3B00FD3E0B /* MBProgressHUD.h */,
 				FD3E8DC31B16AB3B00FD3E0B /* MBProgressHUD.m */,
@@ -152,14 +162,6 @@
 				FD3E8DE01B16D76C00FD3E0B /* JSONUtils.swift */,
 			);
 			path = util;
-			sourceTree = "<group>";
-		};
-		FD3E8DC71B16AB3B00FD3E0B /* view */ = {
-			isa = PBXGroup;
-			children = (
-				FD3E8DC81B16AB3B00FD3E0B /* GroupTableViewCell.swift */,
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		FD42A2FE1AECB218003495C3 = {
@@ -188,7 +190,6 @@
 				FD3E8DB71B16AB3B00FD3E0B /* controllers */,
 				FD3E8DC01B16AB3B00FD3E0B /* third */,
 				FD3E8DC51B16AB3B00FD3E0B /* util */,
-				FD3E8DC71B16AB3B00FD3E0B /* view */,
 				FDD0E9581AF1D53700231EF6 /* GroupContact-Bridging-Header.h */,
 				FDC31B1C1AEF35420073A77C /* Let.swift */,
 				FD1A67BC1AF4773D002B25A0 /* Var.swift */,
@@ -202,6 +203,7 @@
 		FD42A30A1AECB218003495C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FD3E8DEA1B17092200FD3E0B /* storehouse.plist */,
 				FD42A3131AECB218003495C3 /* Images.xcassets */,
 				FD42A3151AECB218003495C3 /* LaunchScreen.xib */,
 				FD42A30B1AECB218003495C3 /* Info.plist */,
@@ -309,6 +311,7 @@
 				FD3E8DD61B16AB3B00FD3E0B /* Main.storyboard in Resources */,
 				FD42A3171AECB218003495C3 /* LaunchScreen.xib in Resources */,
 				FD42A3141AECB218003495C3 /* Images.xcassets in Resources */,
+				FD3E8DEB1B17092200FD3E0B /* storehouse.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +329,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD3E8DDB1B16AB3B00FD3E0B /* GroupTableViewCell.swift in Sources */,
 				FD3E8DC91B16AB3B00FD3E0B /* AESCrypt.m in Sources */,
 				FD3E8DD51B16AB3B00FD3E0B /* UserListViewController.swift in Sources */,
 				FD3E8DCC1B16AB3B00FD3E0B /* GroupAPI.swift in Sources */,
@@ -339,9 +341,11 @@
 				FD3E8DD41B16AB3B00FD3E0B /* UserInfoViewController.swift in Sources */,
 				FD3E8DDD1B16C14A00FD3E0B /* json.swift in Sources */,
 				FD3E8DCF1B16AB3B00FD3E0B /* FriendViewController.swift in Sources */,
+				FD3E8DE71B16FD0E00FD3E0B /* CBStoreHouseRefreshControl.m in Sources */,
 				FD3E8DE11B16D76C00FD3E0B /* JSONUtils.swift in Sources */,
 				FDC31B1D1AEF35420073A77C /* Let.swift in Sources */,
 				FD42A30D1AECB218003495C3 /* AppDelegate.swift in Sources */,
+				FD3E8DE61B16FD0E00FD3E0B /* BarItem.m in Sources */,
 				FD3E8DCD1B16AB3B00FD3E0B /* UserAO.swift in Sources */,
 				FD3E8DD81B16AB3B00FD3E0B /* MBProgressHUD.m in Sources */,
 				FD3E8DD21B16AB3B00FD3E0B /* ProfileViewController.swift in Sources */,

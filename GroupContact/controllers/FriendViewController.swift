@@ -3,7 +3,9 @@ import UIKit
 /*
  * 显示好友列表
  */
-class FriendViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+@objc class FriendViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+    
+    var houseRefreshControl: CBStoreHouseRefreshControl?
     
     // 好友列表
     var friends = [UserAO]() {
@@ -20,6 +22,12 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 下拉刷新的相关配置
+        houseRefreshControl = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self,
+            refreshAction: "refreshData", plist: "storehouse", color: UIColor.blackColor(), lineWidth: CGFloat(2),
+            dropHeight: CGFloat(80), scale: CGFloat(1), horizontalRandomness: CGFloat(150), reverseLoadingAnimation: false,
+            internalAnimationFactor: CGFloat(0.7))
+        
         // tableView基本配置
         tableView.dataSource = self
         tableView.delegate = self
@@ -34,6 +42,22 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
                 Var.friends = $0
             }
         }
+    }
+    
+    func refreshData() {
+        UserAPI.listFriend(Var.uid) {
+            self.friends = $0
+            Var.friends = $0
+            self.houseRefreshControl?.finishingLoading()
+        }
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.houseRefreshControl?.scrollViewDidScroll()
+    }
+    
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.houseRefreshControl?.scrollViewDidEndDragging()
     }
     
     // 需要根据拼音使用多个section

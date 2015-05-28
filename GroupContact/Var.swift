@@ -86,12 +86,8 @@ struct Var {
                 inDomains: NSSearchPathDomainMask.UserDomainMask)
             if urls.count > 0 {
                 let cachePath = (urls[0] as! NSURL).path!
-                fileManager.createDirectoryAtPath(cachePath, withIntermediateDirectories: true, attributes: nil, error: nil)
                 let path = cachePath + "profile.s"
                 var error: NSError?
-                if !fileManager.fileExistsAtPath(path) {
-                    fileManager.createFileAtPath(path, contents: nil, attributes: nil)
-                }
                 // 将user转换成JSON字符串
                 let userJSON = "HelloWorld"
                 let succeeded = userJSON.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding, error: &error)
@@ -141,6 +137,13 @@ struct Var {
         }
     }
     
+    // 按拼音首字母分好段的好友列表
+    static var segmentedFriends = [String: [UserAO]]() {
+        didSet {
+            
+        }
+    }
+    
     // 群组列表信息
     static var groups = [GroupAO]() {
         didSet {
@@ -157,12 +160,8 @@ struct Var {
                 inDomains: NSSearchPathDomainMask.UserDomainMask)
             if urls.count > 0 {
                 let cachePath = (urls[0] as! NSURL).path!
-                fileManager.createDirectoryAtPath(cachePath, withIntermediateDirectories: true, attributes: nil, error: nil)
                 let path = cachePath + "groups.s"
                 var error: NSError?
-                if !fileManager.fileExistsAtPath(path) {
-                    fileManager.createFileAtPath(path, contents: nil, attributes: nil)
-                }
                 // 将groups转换成JSON字符串
                 var targets = [JSONConvertable]()
                 for group in groups {

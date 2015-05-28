@@ -14,6 +14,6 @@ struct Let {
     
     static let KEY = "groupcontact"
     
-    static let BASE_URL = "http://groupcontact.duapp.com/api/v3/"
+    static let BASE_URL = "http://groupcontact.duapp.com/api/v3"
 
 }
