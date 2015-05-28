@@ -28,7 +28,7 @@
         <!--创建用户-->
         <scene sceneID="w1n-2d-Alj">
             <objects>
-                <viewController storyboardIdentifier="createUser" title="创建用户" id="6N6-Ws-FgS" customClass="AuthViewController" customModule="GroupContact" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Auth" title="创建用户" id="6N6-Ws-FgS" customClass="AuthViewController" customModule="GroupContact" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aiy-Gx-8A3"/>
                         <viewControllerLayoutGuide type="bottom" id="94o-Kz-nE0"/>

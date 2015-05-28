@@ -1,15 +1,10 @@
-//
-//  UserCreateViewController.swift
-//  GroupContact
-//
-//  Created by Haibing Zhou on 5/3/15.
-//  Copyright (c) 2015 Haibing Zhou. All rights reserved.
-//
-
 import UIKit
 
+/*
+ * 登录和注册页面, 此处需要创建一个用户实例
+ */
 class AuthViewController: UIViewController {
-    
+
     @IBOutlet weak var loginPhoneView: UITextField!
     
     @IBOutlet weak var loginPasswordView: UITextField!
@@ -58,7 +53,7 @@ class AuthViewController: UIViewController {
         // 显示进度条
         var hud = MBProgressHUD.showHUDAddedTo(self.view!, animated: true)
         hud.labelText = "登录中"
-        UserAPI.createUserWith(phone, password: password) {
+        UserAPI.register(phone, password: password) {
             result in
             // 登录成功
             if result.status == 2 {
@@ -88,7 +83,7 @@ class AuthViewController: UIViewController {
         
         var hud = MBProgressHUD.showHUDAddedTo(self.view!, animated: true)
         hud.labelText = "注册中"
-        UserAPI.createUserWith(phone, password: password) {
+        UserAPI.register(phone, password: password) {
             result in
             // 注册成功
             if result.status == 2 {
@@ -125,21 +120,14 @@ class AuthViewController: UIViewController {
 
     }
     
-    func success(uid: UInt64, password: String) {
+    func success(uid: Int64, password: String) {
         UserAPI.find(uid) {
-            result in
-                var user = result[0]
+            var user = $0
             
-                var defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setValue(NSNumber(unsignedLongLong: uid), forKey: "uid")
-                defaults.setValue(NSString(UTF8String: user.name), forKey: "name")
-                defaults.setValue(NSString(UTF8String: password), forKey: "password")
-                defaults.synchronize()
-            
-                Var.uid = uid
-                Var.password = password
-                Var.name = user.name
-                Var.user = user
+            Var.uid = uid
+            Var.password = password
+            Var.name = user.name
+            Var.user = user
         }
     }
     

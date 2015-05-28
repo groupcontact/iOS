@@ -18,15 +18,16 @@
 		FD3E8DD01B16AB3B00FD3E0B /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB91B16AB3B00FD3E0B /* GroupViewController.swift */; };
 		FD3E8DD11B16AB3B00FD3E0B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBA1B16AB3B00FD3E0B /* MainViewController.swift */; };
 		FD3E8DD21B16AB3B00FD3E0B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBB1B16AB3B00FD3E0B /* ProfileViewController.swift */; };
-		FD3E8DD31B16AB3B00FD3E0B /* UserCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBC1B16AB3B00FD3E0B /* UserCreateViewController.swift */; };
+		FD3E8DD31B16AB3B00FD3E0B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBC1B16AB3B00FD3E0B /* AuthViewController.swift */; };
 		FD3E8DD41B16AB3B00FD3E0B /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBD1B16AB3B00FD3E0B /* UserInfoViewController.swift */; };
 		FD3E8DD51B16AB3B00FD3E0B /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBE1B16AB3B00FD3E0B /* UserListViewController.swift */; };
 		FD3E8DD61B16AB3B00FD3E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD3E8DBF1B16AB3B00FD3E0B /* Main.storyboard */; };
 		FD3E8DD71B16AB3B00FD3E0B /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC11B16AB3B00FD3E0B /* Alamofire.swift */; };
 		FD3E8DD81B16AB3B00FD3E0B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC31B16AB3B00FD3E0B /* MBProgressHUD.m */; };
-		FD3E8DD91B16AB3B00FD3E0B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC41B16AB3B00FD3E0B /* SwiftyJSON.swift */; };
-		FD3E8DDA1B16AB3B00FD3E0B /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC61B16AB3B00FD3E0B /* HttpUtil.swift */; };
 		FD3E8DDB1B16AB3B00FD3E0B /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC81B16AB3B00FD3E0B /* GroupTableViewCell.swift */; };
+		FD3E8DDD1B16C14A00FD3E0B /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DDC1B16C14A00FD3E0B /* json.swift */; };
+		FD3E8DDF1B16C40900FD3E0B /* Req.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DDE1B16C40900FD3E0B /* Req.swift */; };
+		FD3E8DE11B16D76C00FD3E0B /* JSONUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DE01B16D76C00FD3E0B /* JSONUtils.swift */; };
 		FD42A30D1AECB218003495C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A30C1AECB218003495C3 /* AppDelegate.swift */; };
 		FD42A3141AECB218003495C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD42A3131AECB218003495C3 /* Images.xcassets */; };
 		FD42A3171AECB218003495C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD42A3151AECB218003495C3 /* LaunchScreen.xib */; };
@@ -57,16 +58,17 @@
 		FD3E8DB91B16AB3B00FD3E0B /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		FD3E8DBA1B16AB3B00FD3E0B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FD3E8DBB1B16AB3B00FD3E0B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		FD3E8DBC1B16AB3B00FD3E0B /* UserCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCreateViewController.swift; sourceTree = "<group>"; };
+		FD3E8DBC1B16AB3B00FD3E0B /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		FD3E8DBD1B16AB3B00FD3E0B /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		FD3E8DBE1B16AB3B00FD3E0B /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		FD3E8DBF1B16AB3B00FD3E0B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FD3E8DC11B16AB3B00FD3E0B /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		FD3E8DC21B16AB3B00FD3E0B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		FD3E8DC31B16AB3B00FD3E0B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		FD3E8DC41B16AB3B00FD3E0B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		FD3E8DC61B16AB3B00FD3E0B /* HttpUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
 		FD3E8DC81B16AB3B00FD3E0B /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		FD3E8DDC1B16C14A00FD3E0B /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
+		FD3E8DDE1B16C40900FD3E0B /* Req.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Req.swift; sourceTree = "<group>"; };
+		FD3E8DE01B16D76C00FD3E0B /* JSONUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUtils.swift; sourceTree = "<group>"; };
 		FD42A3071AECB218003495C3 /* GroupContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD42A30B1AECB218003495C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD42A30C1AECB218003495C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				FD3E8DB41B16AB3B00FD3E0B /* GroupAPI.swift */,
 				FD3E8DB51B16AB3B00FD3E0B /* UserAO.swift */,
 				FD3E8DB61B16AB3B00FD3E0B /* UserAPI.swift */,
+				FD3E8DDE1B16C40900FD3E0B /* Req.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -125,7 +128,7 @@
 				FD3E8DB91B16AB3B00FD3E0B /* GroupViewController.swift */,
 				FD3E8DBA1B16AB3B00FD3E0B /* MainViewController.swift */,
 				FD3E8DBB1B16AB3B00FD3E0B /* ProfileViewController.swift */,
-				FD3E8DBC1B16AB3B00FD3E0B /* UserCreateViewController.swift */,
+				FD3E8DBC1B16AB3B00FD3E0B /* AuthViewController.swift */,
 				FD3E8DBD1B16AB3B00FD3E0B /* UserInfoViewController.swift */,
 				FD3E8DBE1B16AB3B00FD3E0B /* UserListViewController.swift */,
 			);
@@ -138,7 +141,7 @@
 				FD3E8DC11B16AB3B00FD3E0B /* Alamofire.swift */,
 				FD3E8DC21B16AB3B00FD3E0B /* MBProgressHUD.h */,
 				FD3E8DC31B16AB3B00FD3E0B /* MBProgressHUD.m */,
-				FD3E8DC41B16AB3B00FD3E0B /* SwiftyJSON.swift */,
+				FD3E8DDC1B16C14A00FD3E0B /* json.swift */,
 			);
 			path = third;
 			sourceTree = "<group>";
@@ -146,7 +149,7 @@
 		FD3E8DC51B16AB3B00FD3E0B /* util */ = {
 			isa = PBXGroup;
 			children = (
-				FD3E8DC61B16AB3B00FD3E0B /* HttpUtil.swift */,
+				FD3E8DE01B16D76C00FD3E0B /* JSONUtils.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -327,15 +330,16 @@
 				FD3E8DC91B16AB3B00FD3E0B /* AESCrypt.m in Sources */,
 				FD3E8DD51B16AB3B00FD3E0B /* UserListViewController.swift in Sources */,
 				FD3E8DCC1B16AB3B00FD3E0B /* GroupAPI.swift in Sources */,
+				FD3E8DDF1B16C40900FD3E0B /* Req.swift in Sources */,
 				FD3E8DCA1B16AB3B00FD3E0B /* GeneralAO.swift in Sources */,
-				FD3E8DD31B16AB3B00FD3E0B /* UserCreateViewController.swift in Sources */,
+				FD3E8DD31B16AB3B00FD3E0B /* AuthViewController.swift in Sources */,
 				FD3E8DD11B16AB3B00FD3E0B /* MainViewController.swift in Sources */,
 				FD3E8DD01B16AB3B00FD3E0B /* GroupViewController.swift in Sources */,
-				FD3E8DD91B16AB3B00FD3E0B /* SwiftyJSON.swift in Sources */,
 				FD1A67BD1AF4773D002B25A0 /* Var.swift in Sources */,
 				FD3E8DD41B16AB3B00FD3E0B /* UserInfoViewController.swift in Sources */,
+				FD3E8DDD1B16C14A00FD3E0B /* json.swift in Sources */,
 				FD3E8DCF1B16AB3B00FD3E0B /* FriendViewController.swift in Sources */,
-				FD3E8DDA1B16AB3B00FD3E0B /* HttpUtil.swift in Sources */,
+				FD3E8DE11B16D76C00FD3E0B /* JSONUtils.swift in Sources */,
 				FDC31B1D1AEF35420073A77C /* Let.swift in Sources */,
 				FD42A30D1AECB218003495C3 /* AppDelegate.swift in Sources */,
 				FD3E8DCD1B16AB3B00FD3E0B /* UserAO.swift in Sources */,

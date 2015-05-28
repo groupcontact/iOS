@@ -1,14 +1,8 @@
-//
-//  FriendViewController.swift
-//  GroupContact
-//
-//  Created by Haibing Zhou on 4/26/15.
-//  Copyright (c) 2015 Haibing Zhou. All rights reserved.
-//
-
 import UIKit
-import Alamofire
 
+/*
+ * 显示好友列表
+ */
 class FriendViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
     // 好友列表
@@ -18,6 +12,7 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
         }
     }
     
+    // 重新加载数据
     func updateUI() {
         tableView.reloadData()
     }
@@ -30,9 +25,14 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
         
-        // 调用API加载数据
-        UserAPI.friendsAddedBy(Var.uid) {
-            self.friends = $0
+        if (Var.friends.count > 0) {
+            friends = Var.friends
+        } else {
+            // 调用API加载数据
+            UserAPI.listFriend(Var.uid) {
+                self.friends = $0
+                Var.friends = $0
+            }
         }
     }
     

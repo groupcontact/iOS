@@ -27,9 +27,9 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
         // 标题为用户名
         title = user.name
         phoneLabel.text = user.phone
-        let ext = JSON(data: user.ext.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
-        emailLabel.text = ext["email"].stringValue
-        wechatLabel.text = ext["wechat"].stringValue
+        let ext = JSON.parse(user.ext)
+        emailLabel.text = ext["email"].asString
+        wechatLabel.text = ext["wechat"].asString
         
         // tableView的基本设置
         tableView.delegate = self

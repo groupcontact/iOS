@@ -1,13 +1,8 @@
-//
-//  GroupViewController.swift
-//  GroupContact
-//
-//  Created by Haibing Zhou on 4/26/15.
-//  Copyright (c) 2015 Haibing Zhou. All rights reserved.
-//
-
 import UIKit
 
+/*
+ * 展示用户加入的群组列表
+ */
 class GroupViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var searchText: UISearchBar!
@@ -31,9 +26,14 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
         
-        // 调用API加载数据
-        UserAPI.groupsJoinedBy(Var.uid) {
-            self.groups = $0
+        if (Var.groups.count > 0) {
+            groups = Var.groups
+        } else {
+            // 调用API加载数据
+            UserAPI.listGroup(Var.uid) {
+                self.groups = $0
+                Var.groups = $0
+            }
         }
     }
     

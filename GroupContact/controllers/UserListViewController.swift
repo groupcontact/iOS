@@ -18,7 +18,7 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
     }
     
     // 群组ID, 必须设置
-    var gid: UInt64?
+    var gid: Int64?
     
     func updateUI() {
         tableView.reloadData()
