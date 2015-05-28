@@ -8,7 +8,7 @@
         <!--群通讯录-->
         <scene sceneID="YXp-NE-HNg">
             <objects>
-                <tabBarController storyboardIdentifier="home" title="群通讯录" id="zL9-Oq-sAs" customClass="MainViewController" customModule="GroupContact" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Main" title="群通讯录" id="zL9-Oq-sAs" customClass="MainViewController" customModule="GroupContact" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Brr-gs-soy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

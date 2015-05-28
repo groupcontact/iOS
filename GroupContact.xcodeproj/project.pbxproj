@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD083E101AF1048900C20C8B /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD083E0F1AF1048900C20C8B /* Alamofire.swift */; };
-		FD1A67BB1AF46905002B25A0 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A67BA1AF46905002B25A0 /* SwiftyJSON.swift */; };
 		FD1A67BD1AF4773D002B25A0 /* Var.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A67BC1AF4773D002B25A0 /* Var.swift */; };
-		FD1B31AE1B1580D000863164 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B31AD1B1580D000863164 /* MBProgressHUD.m */; };
-		FD34598C1AEE86DB007530C0 /* UserAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD34598B1AEE86DB007530C0 /* UserAO.swift */; };
-		FD3459901AEE8CC2007530C0 /* GroupAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD34598F1AEE8CC2007530C0 /* GroupAO.swift */; };
-		FD3459921AEE9106007530C0 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3459911AEE9106007530C0 /* GroupTableViewCell.swift */; };
+		FD3E8DC91B16AB3B00FD3E0B /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB01B16AB3B00FD3E0B /* AESCrypt.m */; };
+		FD3E8DCA1B16AB3B00FD3E0B /* GeneralAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB21B16AB3B00FD3E0B /* GeneralAO.swift */; };
+		FD3E8DCB1B16AB3B00FD3E0B /* GroupAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB31B16AB3B00FD3E0B /* GroupAO.swift */; };
+		FD3E8DCC1B16AB3B00FD3E0B /* GroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB41B16AB3B00FD3E0B /* GroupAPI.swift */; };
+		FD3E8DCD1B16AB3B00FD3E0B /* UserAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB51B16AB3B00FD3E0B /* UserAO.swift */; };
+		FD3E8DCE1B16AB3B00FD3E0B /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB61B16AB3B00FD3E0B /* UserAPI.swift */; };
+		FD3E8DCF1B16AB3B00FD3E0B /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB81B16AB3B00FD3E0B /* FriendViewController.swift */; };
+		FD3E8DD01B16AB3B00FD3E0B /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB91B16AB3B00FD3E0B /* GroupViewController.swift */; };
+		FD3E8DD11B16AB3B00FD3E0B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBA1B16AB3B00FD3E0B /* MainViewController.swift */; };
+		FD3E8DD21B16AB3B00FD3E0B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBB1B16AB3B00FD3E0B /* ProfileViewController.swift */; };
+		FD3E8DD31B16AB3B00FD3E0B /* UserCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBC1B16AB3B00FD3E0B /* UserCreateViewController.swift */; };
+		FD3E8DD41B16AB3B00FD3E0B /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBD1B16AB3B00FD3E0B /* UserInfoViewController.swift */; };
+		FD3E8DD51B16AB3B00FD3E0B /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DBE1B16AB3B00FD3E0B /* UserListViewController.swift */; };
+		FD3E8DD61B16AB3B00FD3E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD3E8DBF1B16AB3B00FD3E0B /* Main.storyboard */; };
+		FD3E8DD71B16AB3B00FD3E0B /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC11B16AB3B00FD3E0B /* Alamofire.swift */; };
+		FD3E8DD81B16AB3B00FD3E0B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC31B16AB3B00FD3E0B /* MBProgressHUD.m */; };
+		FD3E8DD91B16AB3B00FD3E0B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC41B16AB3B00FD3E0B /* SwiftyJSON.swift */; };
+		FD3E8DDA1B16AB3B00FD3E0B /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC61B16AB3B00FD3E0B /* HttpUtil.swift */; };
+		FD3E8DDB1B16AB3B00FD3E0B /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DC81B16AB3B00FD3E0B /* GroupTableViewCell.swift */; };
 		FD42A30D1AECB218003495C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A30C1AECB218003495C3 /* AppDelegate.swift */; };
-		FD42A30F1AECB218003495C3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A30E1AECB218003495C3 /* MainViewController.swift */; };
 		FD42A3141AECB218003495C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD42A3131AECB218003495C3 /* Images.xcassets */; };
 		FD42A3171AECB218003495C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD42A3151AECB218003495C3 /* LaunchScreen.xib */; };
 		FD42A3231AECB218003495C3 /* GroupContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A3221AECB218003495C3 /* GroupContactTests.swift */; };
-		FD42A32D1AECB368003495C3 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A32C1AECB368003495C3 /* FriendViewController.swift */; };
-		FD42A32F1AECB3A8003495C3 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A32E1AECB3A8003495C3 /* GroupViewController.swift */; };
-		FD42A3311AECB3BB003495C3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A3301AECB3BB003495C3 /* ProfileViewController.swift */; };
-		FD59B0C71AEFE2D4004E77C1 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD59B0C61AEFE2D4004E77C1 /* UserAPI.swift */; };
-		FD59B0C91AEFE413004E77C1 /* GeneralAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD59B0C81AEFE413004E77C1 /* GeneralAO.swift */; };
-		FD59B0CB1AEFE4C3004E77C1 /* GroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD59B0CA1AEFE4C3004E77C1 /* GroupAPI.swift */; };
-		FD59B0CF1AF067B2004E77C1 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD59B0CE1AF067B2004E77C1 /* HttpUtil.swift */; };
-		FD59B0E31AF0874F004E77C1 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD59B0E21AF0874F004E77C1 /* UserListViewController.swift */; };
-		FD59B0E51AF08A8C004E77C1 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD59B0E41AF08A8C004E77C1 /* UserInfoViewController.swift */; };
-		FD5DA0F11AF5EA5C0010F293 /* UserCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DA0F01AF5EA5C0010F293 /* UserCreateViewController.swift */; };
-		FD5DA0F31AF5F9EA0010F293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5DA0F21AF5F9EA0010F293 /* Main.storyboard */; };
 		FDC31B1D1AEF35420073A77C /* Let.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC31B1C1AEF35420073A77C /* Let.swift */; };
-		FDD0E95A1AF1D53800231EF6 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E9591AF1D53800231EF6 /* AESCrypt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,38 +45,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FD083E0F1AF1048900C20C8B /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
-		FD1A67BA1AF46905002B25A0 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		FD1A67BC1AF4773D002B25A0 /* Var.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Var.swift; sourceTree = "<group>"; };
-		FD1B31AC1B1580D000863164 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		FD1B31AD1B1580D000863164 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		FD34598B1AEE86DB007530C0 /* UserAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAO.swift; sourceTree = "<group>"; };
-		FD34598F1AEE8CC2007530C0 /* GroupAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupAO.swift; sourceTree = "<group>"; };
-		FD3459911AEE9106007530C0 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		FD3E8DAF1B16AB3B00FD3E0B /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
+		FD3E8DB01B16AB3B00FD3E0B /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
+		FD3E8DB21B16AB3B00FD3E0B /* GeneralAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralAO.swift; sourceTree = "<group>"; };
+		FD3E8DB31B16AB3B00FD3E0B /* GroupAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupAO.swift; sourceTree = "<group>"; };
+		FD3E8DB41B16AB3B00FD3E0B /* GroupAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupAPI.swift; sourceTree = "<group>"; };
+		FD3E8DB51B16AB3B00FD3E0B /* UserAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAO.swift; sourceTree = "<group>"; };
+		FD3E8DB61B16AB3B00FD3E0B /* UserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		FD3E8DB81B16AB3B00FD3E0B /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		FD3E8DB91B16AB3B00FD3E0B /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		FD3E8DBA1B16AB3B00FD3E0B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FD3E8DBB1B16AB3B00FD3E0B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FD3E8DBC1B16AB3B00FD3E0B /* UserCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCreateViewController.swift; sourceTree = "<group>"; };
+		FD3E8DBD1B16AB3B00FD3E0B /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		FD3E8DBE1B16AB3B00FD3E0B /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		FD3E8DBF1B16AB3B00FD3E0B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FD3E8DC11B16AB3B00FD3E0B /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		FD3E8DC21B16AB3B00FD3E0B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		FD3E8DC31B16AB3B00FD3E0B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		FD3E8DC41B16AB3B00FD3E0B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		FD3E8DC61B16AB3B00FD3E0B /* HttpUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
+		FD3E8DC81B16AB3B00FD3E0B /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		FD42A3071AECB218003495C3 /* GroupContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD42A30B1AECB218003495C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD42A30C1AECB218003495C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FD42A30E1AECB218003495C3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FD42A3131AECB218003495C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD42A3161AECB218003495C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FD42A31C1AECB218003495C3 /* GroupContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD42A3211AECB218003495C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD42A3221AECB218003495C3 /* GroupContactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupContactTests.swift; sourceTree = "<group>"; };
-		FD42A32C1AECB368003495C3 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
-		FD42A32E1AECB3A8003495C3 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
-		FD42A3301AECB3BB003495C3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		FD59B0C61AEFE2D4004E77C1 /* UserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
-		FD59B0C81AEFE413004E77C1 /* GeneralAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralAO.swift; sourceTree = "<group>"; };
-		FD59B0CA1AEFE4C3004E77C1 /* GroupAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupAPI.swift; sourceTree = "<group>"; };
-		FD59B0CE1AF067B2004E77C1 /* HttpUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpUtil.swift; path = ../HttpUtil.swift; sourceTree = "<group>"; };
-		FD59B0E21AF0874F004E77C1 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
-		FD59B0E41AF08A8C004E77C1 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
-		FD5DA0F01AF5EA5C0010F293 /* UserCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCreateViewController.swift; sourceTree = "<group>"; };
-		FD5DA0F21AF5F9EA0010F293 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		FDC31B1C1AEF35420073A77C /* Let.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Let.swift; sourceTree = "<group>"; };
 		FDD0E9581AF1D53700231EF6 /* GroupContact-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GroupContact-Bridging-Header.h"; sourceTree = "<group>"; };
-		FDD0E9591AF1D53800231EF6 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
-		FDD0E9611AF1D62B00231EF6 /* AESCrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,13 +97,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FD1B31AB1B1580AA00863164 /* third */ = {
+		FD3E8DAE1B16AB3B00FD3E0B /* aes */ = {
 			isa = PBXGroup;
 			children = (
-				FD1B31AC1B1580D000863164 /* MBProgressHUD.h */,
-				FD1B31AD1B1580D000863164 /* MBProgressHUD.m */,
+				FD3E8DAF1B16AB3B00FD3E0B /* AESCrypt.h */,
+				FD3E8DB01B16AB3B00FD3E0B /* AESCrypt.m */,
 			);
-			name = third;
+			path = aes;
+			sourceTree = "<group>";
+		};
+		FD3E8DB11B16AB3B00FD3E0B /* api */ = {
+			isa = PBXGroup;
+			children = (
+				FD3E8DB21B16AB3B00FD3E0B /* GeneralAO.swift */,
+				FD3E8DB31B16AB3B00FD3E0B /* GroupAO.swift */,
+				FD3E8DB41B16AB3B00FD3E0B /* GroupAPI.swift */,
+				FD3E8DB51B16AB3B00FD3E0B /* UserAO.swift */,
+				FD3E8DB61B16AB3B00FD3E0B /* UserAPI.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		FD3E8DB71B16AB3B00FD3E0B /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD3E8DB81B16AB3B00FD3E0B /* FriendViewController.swift */,
+				FD3E8DB91B16AB3B00FD3E0B /* GroupViewController.swift */,
+				FD3E8DBA1B16AB3B00FD3E0B /* MainViewController.swift */,
+				FD3E8DBB1B16AB3B00FD3E0B /* ProfileViewController.swift */,
+				FD3E8DBC1B16AB3B00FD3E0B /* UserCreateViewController.swift */,
+				FD3E8DBD1B16AB3B00FD3E0B /* UserInfoViewController.swift */,
+				FD3E8DBE1B16AB3B00FD3E0B /* UserListViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		FD3E8DC01B16AB3B00FD3E0B /* third */ = {
+			isa = PBXGroup;
+			children = (
+				FD3E8DC11B16AB3B00FD3E0B /* Alamofire.swift */,
+				FD3E8DC21B16AB3B00FD3E0B /* MBProgressHUD.h */,
+				FD3E8DC31B16AB3B00FD3E0B /* MBProgressHUD.m */,
+				FD3E8DC41B16AB3B00FD3E0B /* SwiftyJSON.swift */,
+			);
+			path = third;
+			sourceTree = "<group>";
+		};
+		FD3E8DC51B16AB3B00FD3E0B /* util */ = {
+			isa = PBXGroup;
+			children = (
+				FD3E8DC61B16AB3B00FD3E0B /* HttpUtil.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		FD3E8DC71B16AB3B00FD3E0B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				FD3E8DC81B16AB3B00FD3E0B /* GroupTableViewCell.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		FD42A2FE1AECB218003495C3 = {
@@ -127,21 +180,17 @@
 		FD42A3091AECB218003495C3 /* GroupContact */ = {
 			isa = PBXGroup;
 			children = (
+				FD3E8DAE1B16AB3B00FD3E0B /* aes */,
+				FD3E8DB11B16AB3B00FD3E0B /* api */,
+				FD3E8DB71B16AB3B00FD3E0B /* controllers */,
+				FD3E8DC01B16AB3B00FD3E0B /* third */,
+				FD3E8DC51B16AB3B00FD3E0B /* util */,
+				FD3E8DC71B16AB3B00FD3E0B /* view */,
 				FDD0E9581AF1D53700231EF6 /* GroupContact-Bridging-Header.h */,
-				FD1B31AB1B1580AA00863164 /* third */,
-				FDD0E9571AF1D51C00231EF6 /* aes */,
-				FDD0E9561AF1D23500231EF6 /* view */,
-				FDD0E9551AF1D1EF00231EF6 /* api */,
 				FDC31B1C1AEF35420073A77C /* Let.swift */,
 				FD1A67BC1AF4773D002B25A0 /* Var.swift */,
-				FD42A32E1AECB3A8003495C3 /* GroupViewController.swift */,
-				FD42A32C1AECB368003495C3 /* FriendViewController.swift */,
-				FD42A3301AECB3BB003495C3 /* ProfileViewController.swift */,
-				FD42A30E1AECB218003495C3 /* MainViewController.swift */,
-				FD5DA0F01AF5EA5C0010F293 /* UserCreateViewController.swift */,
-				FD59B0E41AF08A8C004E77C1 /* UserInfoViewController.swift */,
-				FD59B0E21AF0874F004E77C1 /* UserListViewController.swift */,
-				FD5DA0F21AF5F9EA0010F293 /* Main.storyboard */,
+				FD3E8DBF1B16AB3B00FD3E0B /* Main.storyboard */,
+				FD42A30C1AECB218003495C3 /* AppDelegate.swift */,
 				FD42A30A1AECB218003495C3 /* Supporting Files */,
 			);
 			path = GroupContact;
@@ -152,7 +201,6 @@
 			children = (
 				FD42A3131AECB218003495C3 /* Images.xcassets */,
 				FD42A3151AECB218003495C3 /* LaunchScreen.xib */,
-				FD42A30C1AECB218003495C3 /* AppDelegate.swift */,
 				FD42A30B1AECB218003495C3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -173,38 +221,6 @@
 				FD42A3211AECB218003495C3 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FDD0E9551AF1D1EF00231EF6 /* api */ = {
-			isa = PBXGroup;
-			children = (
-				FD1A67BA1AF46905002B25A0 /* SwiftyJSON.swift */,
-				FD083E0F1AF1048900C20C8B /* Alamofire.swift */,
-				FD59B0CE1AF067B2004E77C1 /* HttpUtil.swift */,
-				FD34598B1AEE86DB007530C0 /* UserAO.swift */,
-				FD34598F1AEE8CC2007530C0 /* GroupAO.swift */,
-				FD59B0C81AEFE413004E77C1 /* GeneralAO.swift */,
-				FD59B0C61AEFE2D4004E77C1 /* UserAPI.swift */,
-				FD59B0CA1AEFE4C3004E77C1 /* GroupAPI.swift */,
-			);
-			name = api;
-			sourceTree = "<group>";
-		};
-		FDD0E9561AF1D23500231EF6 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				FD3459911AEE9106007530C0 /* GroupTableViewCell.swift */,
-			);
-			name = view;
-			sourceTree = "<group>";
-		};
-		FDD0E9571AF1D51C00231EF6 /* aes */ = {
-			isa = PBXGroup;
-			children = (
-				FDD0E9591AF1D53800231EF6 /* AESCrypt.m */,
-				FDD0E9611AF1D62B00231EF6 /* AESCrypt.h */,
-			);
-			name = aes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD5DA0F31AF5F9EA0010F293 /* Main.storyboard in Resources */,
+				FD3E8DD61B16AB3B00FD3E0B /* Main.storyboard in Resources */,
 				FD42A3171AECB218003495C3 /* LaunchScreen.xib in Resources */,
 				FD42A3141AECB218003495C3 /* Images.xcassets in Resources */,
 			);
@@ -307,27 +323,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD59B0E31AF0874F004E77C1 /* UserListViewController.swift in Sources */,
-				FD3459921AEE9106007530C0 /* GroupTableViewCell.swift in Sources */,
-				FD1A67BB1AF46905002B25A0 /* SwiftyJSON.swift in Sources */,
-				FDD0E95A1AF1D53800231EF6 /* AESCrypt.m in Sources */,
-				FD42A32F1AECB3A8003495C3 /* GroupViewController.swift in Sources */,
+				FD3E8DDB1B16AB3B00FD3E0B /* GroupTableViewCell.swift in Sources */,
+				FD3E8DC91B16AB3B00FD3E0B /* AESCrypt.m in Sources */,
+				FD3E8DD51B16AB3B00FD3E0B /* UserListViewController.swift in Sources */,
+				FD3E8DCC1B16AB3B00FD3E0B /* GroupAPI.swift in Sources */,
+				FD3E8DCA1B16AB3B00FD3E0B /* GeneralAO.swift in Sources */,
+				FD3E8DD31B16AB3B00FD3E0B /* UserCreateViewController.swift in Sources */,
+				FD3E8DD11B16AB3B00FD3E0B /* MainViewController.swift in Sources */,
+				FD3E8DD01B16AB3B00FD3E0B /* GroupViewController.swift in Sources */,
+				FD3E8DD91B16AB3B00FD3E0B /* SwiftyJSON.swift in Sources */,
 				FD1A67BD1AF4773D002B25A0 /* Var.swift in Sources */,
-				FD42A32D1AECB368003495C3 /* FriendViewController.swift in Sources */,
-				FD59B0CF1AF067B2004E77C1 /* HttpUtil.swift in Sources */,
-				FD083E101AF1048900C20C8B /* Alamofire.swift in Sources */,
-				FD59B0C71AEFE2D4004E77C1 /* UserAPI.swift in Sources */,
+				FD3E8DD41B16AB3B00FD3E0B /* UserInfoViewController.swift in Sources */,
+				FD3E8DCF1B16AB3B00FD3E0B /* FriendViewController.swift in Sources */,
+				FD3E8DDA1B16AB3B00FD3E0B /* HttpUtil.swift in Sources */,
 				FDC31B1D1AEF35420073A77C /* Let.swift in Sources */,
-				FD34598C1AEE86DB007530C0 /* UserAO.swift in Sources */,
-				FD59B0E51AF08A8C004E77C1 /* UserInfoViewController.swift in Sources */,
-				FD1B31AE1B1580D000863164 /* MBProgressHUD.m in Sources */,
-				FD3459901AEE8CC2007530C0 /* GroupAO.swift in Sources */,
-				FD42A3311AECB3BB003495C3 /* ProfileViewController.swift in Sources */,
-				FD59B0CB1AEFE4C3004E77C1 /* GroupAPI.swift in Sources */,
-				FD59B0C91AEFE413004E77C1 /* GeneralAO.swift in Sources */,
-				FD42A30F1AECB218003495C3 /* MainViewController.swift in Sources */,
 				FD42A30D1AECB218003495C3 /* AppDelegate.swift in Sources */,
-				FD5DA0F11AF5EA5C0010F293 /* UserCreateViewController.swift in Sources */,
+				FD3E8DCD1B16AB3B00FD3E0B /* UserAO.swift in Sources */,
+				FD3E8DD81B16AB3B00FD3E0B /* MBProgressHUD.m in Sources */,
+				FD3E8DD21B16AB3B00FD3E0B /* ProfileViewController.swift in Sources */,
+				FD3E8DD71B16AB3B00FD3E0B /* Alamofire.swift in Sources */,
+				FD3E8DCB1B16AB3B00FD3E0B /* GroupAO.swift in Sources */,
+				FD3E8DCE1B16AB3B00FD3E0B /* UserAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
