@@ -1,7 +1,5 @@
 import Foundation
 
-import CryptoSwift
-
 /*
  * 程序中的常量
  */
