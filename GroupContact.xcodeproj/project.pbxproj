@@ -186,6 +186,7 @@
 		FD42A3091AECB218003495C3 /* GroupContact */ = {
 			isa = PBXGroup;
 			children = (
+				FDD080481B1865E800756C2F /* view */,
 				FD3E8DAE1B16AB3B00FD3E0B /* aes */,
 				FD3E8DB11B16AB3B00FD3E0B /* api */,
 				FD3E8DB71B16AB3B00FD3E0B /* controllers */,
@@ -227,6 +228,13 @@
 				FD42A3211AECB218003495C3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDD080481B1865E800756C2F /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

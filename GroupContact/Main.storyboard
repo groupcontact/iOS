@@ -440,7 +440,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nameDesc" textLabel="ucs-Un-1aa" detailTextLabel="ixs-xe-3m7" rowHeight="63" style="IBUITableViewCellStyleSubtitle" id="Vm8-J1-e3J" customClass="GroupTableViewCell" customModule="GroupContact" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nameDesc" textLabel="ucs-Un-1aa" detailTextLabel="ixs-xe-3m7" rowHeight="63" style="IBUITableViewCellStyleSubtitle" id="Vm8-J1-e3J">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vm8-J1-e3J" id="aiM-KQ-L9x">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -480,7 +480,7 @@
                         </connections>
                     </refreshControl>
                     <connections>
-                        <outlet property="searchText" destination="7Vb-xs-0ue" id="kbM-9f-Uhz"/>
+                        <outlet property="searchBar" destination="7Vb-xs-0ue" id="m51-Lz-0pJ"/>
                         <segue destination="TMe-JL-y0e" kind="show" identifier="showUserList" id="URK-aC-9dL"/>
                     </connections>
                 </tableViewController>

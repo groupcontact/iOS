@@ -6,7 +6,7 @@ import UIKit
 class GroupViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     // MARK: - Outlet成员
-    @IBOutlet weak var searchText: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // MARK: - 数据模型
     /* 群组列表 */
@@ -45,7 +45,7 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         }
         
         // 设置UISearchBarDelegate
-        searchText.delegate = self
+        searchBar.delegate = self
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -92,7 +92,7 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // 如果是搜索模式, 提示输入加入密码
         if searchMode {
-            
+            showJoinGroupAlert(displayedGroups[indexPath.row])
         }
         // 非搜索模式直接进入群组成员列表页面
         else {
@@ -114,6 +114,8 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         }
         // 进入搜索模式
         searchMode = true
+        // 取消刷新
+        self.refreshControl = nil
     }
     
     /* 按下了取消按钮 */
@@ -128,6 +130,9 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         searchBar.resignFirstResponder()
         // 退出搜索模式
         searchMode = false
+        // 重新设置UIRefreshControl
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: "refreshData:", forControlEvents: UIControlEvents.ValueChanged)
     }
     
     /* 按下了搜索按钮 */
@@ -135,5 +140,36 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         GroupAPI.search(searchBar.text) {
             self.displayedGroups = $0
         }
+    }
+    
+    // MARK: - 其他成员方法
+    func showJoinGroupAlert(group: GroupAO) {
+        var alert = UIAlertController(title: "\(group.name)", message: "输入访问密码", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "加入", style: UIAlertActionStyle.Default) {
+            if let action = $0 {
+                let keyEntered = (alert.textFields?.first as! UITextField).text
+                UserAPI.join(Var.uid, password: Var.password, gid: group.gid!, accessToken: keyEntered) {
+                    let result = $0
+                    // 成功加入群组
+                    if result.status == 1 {
+                        
+                    } else {
+                        
+                    }
+                }
+            }
+            });
+        alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) {
+            if let action = $0 {
+                // 不关心
+            }
+            });
+        alert.addTextFieldWithConfigurationHandler() {
+            (textField) in textField.placeholder = "访问密码"
+        };
+        if let ppc = alert.popoverPresentationController {
+            ppc.sourceView = tableView
+        }
+        presentViewController(alert, animated: true, completion: nil)
     }
 }
