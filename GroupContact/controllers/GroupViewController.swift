@@ -37,6 +37,7 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         // tableView基本设置
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
         
         if (Var.groups.count > 0) {
             groups = Var.groups
@@ -46,6 +47,14 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         
         // 设置UISearchBarDelegate
         searchBar.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if let hidden = navigationController?.navigationBarHidden {
+            if hidden {
+                leaveSearchMode()
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -65,6 +74,10 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
     
     // MARK: - Action函数
     @IBAction func refreshData(sender: UIRefreshControl?) {
+        if searchMode {
+            sender?.endRefreshing()
+            return
+        }
         UserAPI.listGroup(Var.uid) {
             self.groups = $0
             Var.groups = $0
@@ -103,36 +116,12 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
     // MARK: - UISearchBarDelegate
     /* 开始编辑时 */
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        self.displayedGroups = [GroupAO]()
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        // 显示取消按钮
-        searchBar.setShowsCancelButton(true, animated: true)
-        for subView in searchBar.subviews[0].subviews {
-            if let button = subView as? UIButton {
-                button.setTitle("取消", forState: UIControlState.Normal)
-            }
-        }
-        // 进入搜索模式
-        searchMode = true
-        // 取消刷新
-        self.refreshControl = nil
+        enterSearchMode()
     }
     
     /* 按下了取消按钮 */
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        // 不显示取消按钮
-        searchBar.setShowsCancelButton(false, animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.displayedGroups = groups
-        // 清空输入的内容
-        searchBar.text = ""
-        // 失去编辑焦点
-        searchBar.resignFirstResponder()
-        // 退出搜索模式
-        searchMode = false
-        // 重新设置UIRefreshControl
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: "refreshData:", forControlEvents: UIControlEvents.ValueChanged)
+        leaveSearchMode()
     }
     
     /* 按下了搜索按钮 */
@@ -171,5 +160,32 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
             ppc.sourceView = tableView
         }
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func leaveSearchMode() {
+        // 不显示取消按钮
+        searchBar.setShowsCancelButton(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.displayedGroups = groups
+        // 清空输入的内容
+        searchBar.text = ""
+        // 失去编辑焦点
+        searchBar.resignFirstResponder()
+        // 退出搜索模式
+        searchMode = false
+    }
+    
+    func enterSearchMode() {
+        self.displayedGroups = [GroupAO]()
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        // 显示取消按钮
+        searchBar.setShowsCancelButton(true, animated: true)
+        for subView in searchBar.subviews[0].subviews {
+            if let button = subView as? UIButton {
+                button.setTitle("取消", forState: UIControlState.Normal)
+            }
+        }
+        // 进入搜索模式
+        searchMode = true
     }
 }

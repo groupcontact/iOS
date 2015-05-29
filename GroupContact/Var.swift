@@ -89,7 +89,7 @@ struct Var {
                 let path = cachePath + "profile.s"
                 var error: NSError?
                 // 将user转换成JSON字符串
-                let userJSON = "HelloWorld"
+                let userJSON = user!.toJSON()
                 let succeeded = userJSON.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding, error: &error)
                 if !succeeded {
                     if let theError = error {

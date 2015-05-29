@@ -115,7 +115,7 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
     // MARK: - 其他方法
     func showMenu(sender: UIBarButtonItem) {
         var alert = UIAlertController(title: self.title, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        alert.addAction(UIAlertAction(title: "退出群组", style: UIAlertActionStyle.Default) {
+        alert.addAction(UIAlertAction(title: "退出群组", style: UIAlertActionStyle.Destructive) {
                 let action = $0
             
             });
