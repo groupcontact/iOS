@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupContact/Var.swift"
-            timestampString = "454512274.194649"
+            timestampString = "454556455.579848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "initVar()"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupContact/Var.swift"
-            timestampString = "454512274.194649"
+            timestampString = "454556455.579848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "initVar()"
             landmarkType = "5">
          </BreakpointContent>
@@ -378,11 +378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupContact/Var.swift"
-            timestampString = "454512274.194649"
+            timestampString = "454556455.579848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "initVar()"
             landmarkType = "5">
          </BreakpointContent>
@@ -409,22 +409,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GroupContact/controllers/FriendViewController.swift"
-            timestampString = "454493625.740505"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "GroupContact/third/CBStoreHouseRefreshControl.m"
             timestampString = "454494036.299128"
             startingColumnNumber = "9223372036854775807"
@@ -432,22 +416,6 @@
             startingLineNumber = "93"
             endingLineNumber = "93"
             landmarkName = "+attachToScrollView:target:refreshAction:plist:color:lineWidth:dropHeight:scale:horizontalRandomness:reverseLoadingAnimation:internalAnimationFactor:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroupContact/controllers/GroupViewController.swift"
-            timestampString = "454515703.354607"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -506,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupContact/api/GroupAPI.swift"
-            timestampString = "454513204.445652"
+            timestampString = "454556455.579848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "listMember2(_:callback:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -522,12 +490,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupContact/api/GroupAPI.swift"
-            timestampString = "454513204.445652"
+            timestampString = "454556455.579848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "listMember2(_:callback:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroupContact/Var.swift"
+            timestampString = "454555569.382888"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "initVar()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

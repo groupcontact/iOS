@@ -72,13 +72,19 @@ class UserAPI {
     }
     
     // 列举用户添加的好友
-    class func listFriend(uid: Int64, callback: ([UserAO]) -> ()) {
-        let url = "\(Let.BASE_URL)/users/\(uid)/friends"
+    class func listFriend(uid: Int64, callback: ([String: [UserAO]]) -> ()) {
+        let url = "\(Let.BASE_URL)/users/\(uid)/friends2"
         Req.get(url) {
-            var result = [UserAO]()
+            // 结果数据
+            var result = [String: [UserAO]]()
             if let json = $0 {
                 for (i, v) in json {
-                    result.append(UserAO.fromJSON(v) as! UserAO)
+                    var key = i as! String
+                    var users = [UserAO]()
+                    for (_, jsonUser) in v {
+                        users.append(UserAO.fromJSON(jsonUser) as! UserAO)
+                    }
+                    result[key] = users
                 }
             }
             callback(result)

@@ -25,11 +25,9 @@ class GroupAPI {
     }
     
     // 列举群组中的成员(姓名分组后的)
-    class func listMember2(gid: Int64, callback: ([String], [String: [UserAO]]) -> ()) {
+    class func listMember2(gid: Int64, callback: ([String: [UserAO]]) -> ()) {
         let url = "\(Let.BASE_URL)/groups/\(gid)/members2"
         Req.get(url) {
-            // 所有的拼音首字母集合
-            var keys = [String]()
             // 结果数据
             var result = [String: [UserAO]]()
             if let json = $0 {
@@ -40,14 +38,9 @@ class GroupAPI {
                         users.append(UserAO.fromJSON(jsonUser) as! UserAO)
                     }
                     result[key] = users
-                    keys.append(key)
                 }
             }
-            // 需要重新排序
-            keys.sort() {
-                return $0 < $1
-            }
-            callback(keys, result)
+            callback(result)
         }
     }
     

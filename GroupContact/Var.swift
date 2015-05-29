@@ -101,7 +101,7 @@ struct Var {
     }
     
     // 好友列表信息
-    static var friends = [UserAO]() {
+    static var friends = [String: [UserAO]]() {
         didSet {
             // 没有数据就没必要写文件了
             if friends.count == 0 {
@@ -116,16 +116,19 @@ struct Var {
                 inDomains: NSSearchPathDomainMask.UserDomainMask)
             if urls.count > 0 {
                 let cachePath = (urls[0] as! NSURL).path!
-                let path = cachePath + "friends.s"
+                var path = cachePath + "friends.s"
                 var error: NSError?
-                // 将friends转换成JSON字符串
-                var targets = [JSONConvertable]()
-                for user in friends {
-                    targets.append(user)
+                // 将friends转成JSON字符串
+                var friendsJSON = "{"
+                for (key, value) in friends {
+                    var targets = [JSONConvertable]()
+                    for user in value {
+                        targets.append(user)
+                    }
+                    friendsJSON += "\"\(key)\":" + JSONUtils.toJSONArray(targets) + ","
                 }
-                let friendsJSON = JSONUtils.toJSONArray(targets)
-                // 为什么不可以直接
-                // let friendsJSON = JSONUtils.toJSONArray(friends)
+                friendsJSON.removeAtIndex(friendsJSON.endIndex.predecessor())
+                friendsJSON += "}"
                 let succeeded = friendsJSON.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding, error: &error)
                 if !succeeded {
                     if let theError = error {
@@ -133,14 +136,6 @@ struct Var {
                     }
                 }
             }
-
-        }
-    }
-    
-    // 按拼音首字母分好段的好友列表
-    static var segmentedFriends = [String: [UserAO]]() {
-        didSet {
-            
         }
     }
     
@@ -206,11 +201,16 @@ struct Var {
             let friendsPath = cachePath + "friends.s"
             if let friendsJSON = NSString(contentsOfFile: friendsPath, encoding: NSUTF8StringEncoding
                 , error: nil) as? String {
-                // 将其转换成[UserAO]对象
-                let targets = JSONUtils.fromJSONArray(friendsJSON)
-                var localFriends = [UserAO]()
-                for target in targets {
-                    localFriends.append(target as! UserAO)
+                // 将其转换成[String: [UserAO]]对象
+                var localFriends = [String: [UserAO]]()
+                let dict = JSON(string: friendsJSON)
+                for (key, value) in dict {
+                    let keyStr = key as! String
+                    var users = [UserAO]()
+                    for (_, userJSON) in value {
+                        users.append(UserAO.fromJSON(userJSON) as! UserAO)
+                    }
+                    localFriends[keyStr] = users
                 }
                 friends = localFriends
             }
