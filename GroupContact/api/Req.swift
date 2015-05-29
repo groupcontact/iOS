@@ -11,14 +11,10 @@ class Req {
     class func get(url: String, cb: (result: JSON?) -> ()) {
         Alamofire.request(.GET, url).responseString {
             (_, _, string, _) in
-            // 如果没有数据返回
-            if string == nil {
-                cb(result: nil)
+            if let resp = string {
+                Handler.JSON_HANDLER(AESCrypt.decrypt(resp, password: Let.KEY), cb: cb)
             } else {
-                // 先解密
-                let decrypted = AESCrypt.decrypt(string, password: Let.KEY)
-                // 转成JSON                
-                cb(result: JSON(string: decrypted))
+                Handler.JSON_HANDLER(nil, cb: cb)
             }
         }
     }
@@ -27,41 +23,23 @@ class Req {
     class func post(url: String, parameters: [String: AnyObject], cb: (JSON?) -> ()) {
         Alamofire.request(.POST, url, parameters: parameters).responseString {
             (_, _, string, _) in
-            // 如果没有数据返回
-            if string == nil {
-                cb(nil)
-            } else {
-                // 转成JSON
-                cb(JSON(string: string!))
-            }
+            Handler.JSON_HANDLER(string, cb: cb)
         }
     }
     
     // PUT请求
-    class func put(url: String, parameters: [String: AnyObject], cb: (result: JSON?) -> ()) {
+    class func put(url: String, parameters: [String: AnyObject], cb: (JSON?) -> ()) {
         Alamofire.request(.PUT, url, parameters: parameters).responseString {
             (_, _, string, _) in
-            // 如果没有数据返回
-            if string == nil {
-                cb(result: nil)
-            } else {
-                // 转成JSON
-                cb(result: JSON(string: string!))
-            }
+            Handler.JSON_HANDLER(string, cb: cb)
         }
     }
     
     // DELETE请求
-    class func delete(url: String, cb: (result: JSON?) -> ()) {
+    class func delete(url: String, cb: (JSON?) -> ()) {
         Alamofire.request(.GET, url).responseString {
             (_, _, string, _) in
-            // 如果没有数据返回
-            if string == nil {
-                cb(result: nil)
-            } else {
-                // 转成JSON
-                cb(result: JSON(string: string!))
-            }
+            Handler.JSON_HANDLER(string, cb: cb)
         }
     }
 }

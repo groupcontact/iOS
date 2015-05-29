@@ -60,4 +60,12 @@ struct Handler {
         cb(nil)
     }
 
+    /* 处理JSON的函数 */
+    static func JSON_HANDLER(resp: String?, cb: (JSON?) -> ()) {
+        if let string = resp {
+            cb(JSON(string: string))
+        } else {
+            cb(nil)
+        }
+    }
 }
