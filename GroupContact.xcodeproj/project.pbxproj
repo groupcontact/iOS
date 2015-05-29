@@ -36,6 +36,7 @@
 		FDC31B1D1AEF35420073A77C /* Let.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC31B1C1AEF35420073A77C /* Let.swift */; };
 		FDD080431B180D9700756C2F /* TableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD080421B180D9700756C2F /* TableUtils.swift */; };
 		FDD080451B18336500756C2F /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD080441B18336500756C2F /* Handler.swift */; };
+		FDD0804B1B1872DD00756C2F /* TWMessageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD0804A1B1872DD00756C2F /* TWMessageBarManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		FDC31B1C1AEF35420073A77C /* Let.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Let.swift; sourceTree = "<group>"; };
 		FDD080421B180D9700756C2F /* TableUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableUtils.swift; sourceTree = "<group>"; };
 		FDD080441B18336500756C2F /* Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
+		FDD080491B1872DD00756C2F /* TWMessageBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWMessageBarManager.h; sourceTree = "<group>"; };
+		FDD0804A1B1872DD00756C2F /* TWMessageBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMessageBarManager.m; sourceTree = "<group>"; };
 		FDD0E9581AF1D53700231EF6 /* GroupContact-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GroupContact-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +149,8 @@
 		FD3E8DC01B16AB3B00FD3E0B /* third */ = {
 			isa = PBXGroup;
 			children = (
+				FDD080491B1872DD00756C2F /* TWMessageBarManager.h */,
+				FDD0804A1B1872DD00756C2F /* TWMessageBarManager.m */,
 				FD3E8DE21B16FD0E00FD3E0B /* BarItem.h */,
 				FD3E8DE31B16FD0E00FD3E0B /* BarItem.m */,
 				FD3E8DC11B16AB3B00FD3E0B /* Alamofire.swift */,
@@ -349,6 +354,7 @@
 				FD3E8DD01B16AB3B00FD3E0B /* GroupViewController.swift in Sources */,
 				FDD080431B180D9700756C2F /* TableUtils.swift in Sources */,
 				FD1A67BD1AF4773D002B25A0 /* Var.swift in Sources */,
+				FDD0804B1B1872DD00756C2F /* TWMessageBarManager.m in Sources */,
 				FD3E8DD41B16AB3B00FD3E0B /* UserInfoViewController.swift in Sources */,
 				FD3E8DDD1B16C14A00FD3E0B /* json.swift in Sources */,
 				FD3E8DCF1B16AB3B00FD3E0B /* FriendViewController.swift in Sources */,

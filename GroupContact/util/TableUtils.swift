@@ -14,7 +14,7 @@ struct TableUtils {
         label.textAlignment = NSTextAlignment.Center
         
         footer.addSubview(label)
-        footer.addConstraint(NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: footer, attribute: NSLayoutAttribute.Bottom, multiplier: CGFloat(1.0), constant: CGFloat(0.0)))
+//        footer.addConstraint(NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: footer, attribute: NSLayoutAttribute.Bottom, multiplier: CGFloat(1.0), constant: CGFloat(0.0)))
         return footer
     }
 }

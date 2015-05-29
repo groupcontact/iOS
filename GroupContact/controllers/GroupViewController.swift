@@ -152,9 +152,9 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
                     let result = $0
                     // 成功加入群组
                     if result.status == 1 {
-                        
+                        TWMessageBarManager.sharedInstance().showMessageWithTitle(group.name, description: "成功加入", type: TWMessageBarMessageType.Success)
                     } else {
-                        
+                        TWMessageBarManager.sharedInstance().showMessageWithTitle(group.name, description: result.info, type: TWMessageBarMessageType.Error)
                     }
                 }
             }
