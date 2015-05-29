@@ -49,7 +49,7 @@ class GroupAPI {
      */
     class func search(name: String, callback: (result: [GroupAO]) -> ()) {
         let searchKey = name.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-        let url = "\(Let.BASE_URL)/groups?name=\(searchKey)"
+        let url = "\(Let.BASE_URL)/groups?name=\(searchKey!)"
         Req.get(url) {
             Handler.GROUP_LIST_HANDLER($0, cb: callback)
         }
