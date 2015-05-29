@@ -12,17 +12,21 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
     // MARK: - 数据模型
     /* 姓氏首字母集合 */
     var keys = [String]()
+    var totalCount = 0
     /* 具体的成员列表 */
     var members = [String: [UserAO]]() {
         didSet {
+            totalCount = 0
             keys.removeAll()
-            for (key, _) in members {
+            for (key, value) in members {
                 keys.append(key)
+                totalCount += value.count
             }
             keys.sort() {
                 return $0 < $1
             }
             tableView.reloadData()
+            tableView.tableFooterView = TableUtils.footerView("总共\(totalCount)位成员")
         }
     }
     
@@ -38,6 +42,10 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        
+        // 退出群组的菜单
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "showMenu:")
+        
         
         // 显示正在加载中
         hud = MBProgressHUD.showHUDAddedTo(self.view!, animated: true)
@@ -102,5 +110,22 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("showUserInfo", sender: tableView)
+    }
+    
+    // MARK: - 其他方法
+    func showMenu(sender: UIBarButtonItem) {
+        var alert = UIAlertController(title: self.title, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        alert.addAction(UIAlertAction(title: "退出群组", style: UIAlertActionStyle.Default) {
+                let action = $0
+            
+            });
+        alert.addAction(UIAlertAction(title: "取消", style: .Cancel) {
+                let action = $0
+            });
+        alert.modalPresentationStyle = .Popover
+        let ppc = alert.popoverPresentationController
+        ppc?.barButtonItem = sender
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
 }

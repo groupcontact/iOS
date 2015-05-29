@@ -13,6 +13,7 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
     var groups = [GroupAO]() {
         didSet {
             tableView.reloadData()
+            tableView.tableFooterView = TableUtils.footerView("总共\(groups.count)个群组")
         }
     }
     
@@ -23,7 +24,6 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         // tableView基本设置
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
         
         if (Var.groups.count > 0) {
             groups = Var.groups

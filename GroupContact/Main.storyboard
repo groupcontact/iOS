@@ -348,7 +348,7 @@
                         <sections>
                             <tableViewSection footerTitle=" " id="oN0-oP-Swi">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="bLz-c3-bwI" detailTextLabel="JQB-cc-7Ny" style="IBUITableViewCellStyleValue1" id="04e-D1-8sK">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" textLabel="bLz-c3-bwI" detailTextLabel="JQB-cc-7Ny" style="IBUITableViewCellStyleValue1" id="04e-D1-8sK">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="04e-D1-8sK" id="2L7-fH-frL">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -368,7 +368,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Vkv-cN-ust" detailTextLabel="yvH-GF-0qw" style="IBUITableViewCellStyleValue1" id="Ab4-yc-NpH">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" textLabel="Vkv-cN-ust" detailTextLabel="yvH-GF-0qw" style="IBUITableViewCellStyleValue1" id="Ab4-yc-NpH">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ab4-yc-NpH" id="AgF-WA-vNm">
                                             <autoresizingMask key="autoresizingMask"/>

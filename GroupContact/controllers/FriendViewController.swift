@@ -5,21 +5,25 @@ import UIKit
  */
 class FriendViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
     // MARK: - 数据模型
     /* 姓氏首字母集合 */
     var keys = [String]()
+    var totalCount = 0
     /* 具体的成员列表 */
     var friends = [String: [UserAO]]() {
         didSet {
+            totalCount = 0
             keys.removeAll()
-            for (key, _) in friends {
+            for (key, value) in friends {
                 keys.append(key)
+                totalCount += value.count
             }
             keys.sort() {
                 return $0 < $1
             }
             tableView.reloadData()
+            tableView.tableFooterView = TableUtils.footerView("总共\(totalCount)位好友")
+            tableView.tableFooterView = tableView.tableFooterView
         }
     }
 
@@ -30,7 +34,6 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
         // tableView基本配置
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
         
         if (Var.friends.count > 0) {
             friends = Var.friends

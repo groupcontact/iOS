@@ -34,6 +34,7 @@
 		FD42A3171AECB218003495C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD42A3151AECB218003495C3 /* LaunchScreen.xib */; };
 		FD42A3231AECB218003495C3 /* GroupContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A3221AECB218003495C3 /* GroupContactTests.swift */; };
 		FDC31B1D1AEF35420073A77C /* Let.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC31B1C1AEF35420073A77C /* Let.swift */; };
+		FDD080431B180D9700756C2F /* TableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD080421B180D9700756C2F /* TableUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		FD42A3211AECB218003495C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD42A3221AECB218003495C3 /* GroupContactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupContactTests.swift; sourceTree = "<group>"; };
 		FDC31B1C1AEF35420073A77C /* Let.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Let.swift; sourceTree = "<group>"; };
+		FDD080421B180D9700756C2F /* TableUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableUtils.swift; sourceTree = "<group>"; };
 		FDD0E9581AF1D53700231EF6 /* GroupContact-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GroupContact-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				FD3E8DE01B16D76C00FD3E0B /* JSONUtils.swift */,
+				FDD080421B180D9700756C2F /* TableUtils.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				FD3E8DD31B16AB3B00FD3E0B /* AuthViewController.swift in Sources */,
 				FD3E8DD11B16AB3B00FD3E0B /* MainViewController.swift in Sources */,
 				FD3E8DD01B16AB3B00FD3E0B /* GroupViewController.swift in Sources */,
+				FDD080431B180D9700756C2F /* TableUtils.swift in Sources */,
 				FD1A67BD1AF4773D002B25A0 /* Var.swift in Sources */,
 				FD3E8DD41B16AB3B00FD3E0B /* UserInfoViewController.swift in Sources */,
 				FD3E8DDD1B16C14A00FD3E0B /* json.swift in Sources */,

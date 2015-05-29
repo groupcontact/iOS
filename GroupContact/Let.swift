@@ -16,4 +16,10 @@ struct Let {
     
     static let BASE_URL = "http://groupcontact.duapp.com/api/v3"
 
+    // 提示符Label的颜色
+    static let TIP_COLOR = UIColor(red: CGFloat(0.6), green: CGFloat(0.6), blue: CGFloat(0.6),
+        alpha: CGFloat(1))
+    
+    // 提示符Label的大小
+    static let TIP_SIZE = CGFloat(15)
 }
