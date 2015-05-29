@@ -35,6 +35,7 @@
 		FD42A3231AECB218003495C3 /* GroupContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A3221AECB218003495C3 /* GroupContactTests.swift */; };
 		FDC31B1D1AEF35420073A77C /* Let.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC31B1C1AEF35420073A77C /* Let.swift */; };
 		FDD080431B180D9700756C2F /* TableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD080421B180D9700756C2F /* TableUtils.swift */; };
+		FDD080451B18336500756C2F /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD080441B18336500756C2F /* Handler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		FD42A3221AECB218003495C3 /* GroupContactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupContactTests.swift; sourceTree = "<group>"; };
 		FDC31B1C1AEF35420073A77C /* Let.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Let.swift; sourceTree = "<group>"; };
 		FDD080421B180D9700756C2F /* TableUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableUtils.swift; sourceTree = "<group>"; };
+		FDD080441B18336500756C2F /* Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
 		FDD0E9581AF1D53700231EF6 /* GroupContact-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GroupContact-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				FD3E8DB51B16AB3B00FD3E0B /* UserAO.swift */,
 				FD3E8DB61B16AB3B00FD3E0B /* UserAPI.swift */,
 				FD3E8DDE1B16C40900FD3E0B /* Req.swift */,
+				FDD080441B18336500756C2F /* Handler.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				FD3E8DC91B16AB3B00FD3E0B /* AESCrypt.m in Sources */,
 				FD3E8DD51B16AB3B00FD3E0B /* UserListViewController.swift in Sources */,
+				FDD080451B18336500756C2F /* Handler.swift in Sources */,
 				FD3E8DCC1B16AB3B00FD3E0B /* GroupAPI.swift in Sources */,
 				FD3E8DDF1B16C40900FD3E0B /* Req.swift in Sources */,
 				FD3E8DCA1B16AB3B00FD3E0B /* GeneralAO.swift in Sources */,

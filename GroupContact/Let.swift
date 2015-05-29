@@ -1,19 +1,16 @@
-//
-//  Let.swift
-//  GroupContact
-//
-//  Created by Haibing Zhou on 4/28/15.
-//  Copyright (c) 2015 Haibing Zhou. All rights reserved.
-//
-
 import Foundation
 
 import CryptoSwift
 
+/*
+ * 程序中的常量
+ */
 struct Let {
     
+    /* 加密使用的KEY */
     static let KEY = "groupcontact"
     
+    /* API的链接 */
     static let BASE_URL = "http://groupcontact.duapp.com/api/v3"
 
     // 提示符Label的颜色
@@ -22,4 +19,5 @@ struct Let {
     
     // 提示符Label的大小
     static let TIP_SIZE = CGFloat(15)
+    
 }

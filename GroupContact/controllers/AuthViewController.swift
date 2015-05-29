@@ -122,12 +122,12 @@ class AuthViewController: UIViewController {
     
     func success(uid: Int64, password: String) {
         UserAPI.find(uid) {
-            var user = $0
-            
-            Var.uid = uid
-            Var.password = password
-            Var.name = user.name
-            Var.user = user
+            if let user = $0 {
+                Var.uid = uid
+                Var.password = password
+                Var.name = user.name
+                Var.user = user
+            }
         }
     }
     

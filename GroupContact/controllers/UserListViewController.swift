@@ -71,7 +71,7 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
     
     // MARK: - Action函数
     @IBAction func refreshData(sender: UIRefreshControl?) {
-        GroupAPI.listMember2(gid!) {
+        GroupAPI.listMember(gid!) {
             self.members = $0
             
             sender?.endRefreshing()
