@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 如果已登录, 则进入主页面
             window?.rootViewController = uiStoryboard.instantiateViewControllerWithIdentifier("Main") as? UIViewController
         }
+        // 友盟初始化
+        UMFeedback.setAppkey("556953a467e58e13cb000946")
         return true
     }
 }

@@ -145,10 +145,9 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
                     let result = $0
                     // 成功加入群组
                     if result.status == 1 {
-                        TWMessageBarManager.sharedInstance().showMessageWithTitle(group.name, description: "成功加入", type: TWMessageBarMessageType.Success,
-                            statusBarStyle: UIStatusBarStyle.Default, callback: nil)
+                        ToastUtils.info(group.name, message: "成功加入")
                     } else {
-                        TWMessageBarManager.sharedInstance().showMessageWithTitle(group.name, description: result.info, type: TWMessageBarMessageType.Error)
+                        ToastUtils.error(group.name, message: result.info)
                     }
                 }
             }
@@ -159,7 +158,9 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
             }
             });
         alert.addTextFieldWithConfigurationHandler() {
-            (textField) in textField.placeholder = "访问密码"
+            (textField) in
+            textField.placeholder = "访问密码"
+            textField.secureTextEntry = true
         };
         if let ppc = alert.popoverPresentationController {
             ppc.sourceView = tableView

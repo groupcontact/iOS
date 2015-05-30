@@ -229,4 +229,11 @@ struct Var {
         }
         initialized = true
     }
+    
+    /*
+     * 清除所有的缓存数据
+     */
+    static func clearAll() {
+        
+    }
 }
