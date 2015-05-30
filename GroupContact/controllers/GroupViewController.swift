@@ -168,6 +168,9 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    /*
+     * 退出搜索模式
+     */
     func leaveSearchMode() {
         // 不显示取消按钮
         searchBar.setShowsCancelButton(false, animated: true)
@@ -185,6 +188,9 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         searchMode = false
     }
     
+    /*
+     * 进入搜索模式
+     */
     func enterSearchMode() {
         self.displayedGroups = [GroupAO]()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
