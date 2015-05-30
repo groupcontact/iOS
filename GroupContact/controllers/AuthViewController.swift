@@ -127,6 +127,7 @@ class AuthViewController: UIViewController {
                 Var.password = password
                 Var.name = user.name
                 Var.user = user
+                self.performSegueWithIdentifier("showMain", sender: self)
             }
         }
     }

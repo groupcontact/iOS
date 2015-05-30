@@ -33,8 +33,11 @@
 		FD42A3141AECB218003495C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD42A3131AECB218003495C3 /* Images.xcassets */; };
 		FD42A3171AECB218003495C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD42A3151AECB218003495C3 /* LaunchScreen.xib */; };
 		FD42A3231AECB218003495C3 /* GroupContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A3221AECB218003495C3 /* GroupContactTests.swift */; };
+		FD4C96FE1B194D0000FF4D8D /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C96FD1B194D0000FF4D8D /* ColorUtils.swift */; };
+		FD4C97001B194FFB00FF4D8D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C96FF1B194FFB00FF4D8D /* UIColorExtension.swift */; };
+		FD4C97021B19537200FF4D8D /* NamePhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C97011B19537200FF4D8D /* NamePhoneTableViewCell.swift */; };
+		FD4C97041B1958AA00FF4D8D /* NameDescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C97031B1958AA00FF4D8D /* NameDescTableViewCell.swift */; };
 		FDC31B1D1AEF35420073A77C /* Let.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC31B1C1AEF35420073A77C /* Let.swift */; };
-		FDD080431B180D9700756C2F /* TableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD080421B180D9700756C2F /* TableUtils.swift */; };
 		FDD080451B18336500756C2F /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD080441B18336500756C2F /* Handler.swift */; };
 		FDD0804B1B1872DD00756C2F /* TWMessageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD0804A1B1872DD00756C2F /* TWMessageBarManager.m */; };
 /* End PBXBuildFile section */
@@ -83,8 +86,11 @@
 		FD42A31C1AECB218003495C3 /* GroupContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD42A3211AECB218003495C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD42A3221AECB218003495C3 /* GroupContactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupContactTests.swift; sourceTree = "<group>"; };
+		FD4C96FD1B194D0000FF4D8D /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		FD4C96FF1B194FFB00FF4D8D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		FD4C97011B19537200FF4D8D /* NamePhoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NamePhoneTableViewCell.swift; path = view/NamePhoneTableViewCell.swift; sourceTree = "<group>"; };
+		FD4C97031B1958AA00FF4D8D /* NameDescTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameDescTableViewCell.swift; path = view/NameDescTableViewCell.swift; sourceTree = "<group>"; };
 		FDC31B1C1AEF35420073A77C /* Let.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Let.swift; sourceTree = "<group>"; };
-		FDD080421B180D9700756C2F /* TableUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableUtils.swift; sourceTree = "<group>"; };
 		FDD080441B18336500756C2F /* Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
 		FDD080491B1872DD00756C2F /* TWMessageBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWMessageBarManager.h; sourceTree = "<group>"; };
 		FDD0804A1B1872DD00756C2F /* TWMessageBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMessageBarManager.m; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 				FD3E8DC21B16AB3B00FD3E0B /* MBProgressHUD.h */,
 				FD3E8DC31B16AB3B00FD3E0B /* MBProgressHUD.m */,
 				FD3E8DDC1B16C14A00FD3E0B /* json.swift */,
+				FD4C96FF1B194FFB00FF4D8D /* UIColorExtension.swift */,
 			);
 			path = third;
 			sourceTree = "<group>";
@@ -165,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				FD3E8DE01B16D76C00FD3E0B /* JSONUtils.swift */,
-				FDD080421B180D9700756C2F /* TableUtils.swift */,
+				FD4C96FD1B194D0000FF4D8D /* ColorUtils.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -238,6 +245,8 @@
 		FDD080481B1865E800756C2F /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FD4C97011B19537200FF4D8D /* NamePhoneTableViewCell.swift */,
+				FD4C97031B1958AA00FF4D8D /* NameDescTableViewCell.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -344,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD3E8DC91B16AB3B00FD3E0B /* AESCrypt.m in Sources */,
+				FD4C97041B1958AA00FF4D8D /* NameDescTableViewCell.swift in Sources */,
 				FD3E8DD51B16AB3B00FD3E0B /* UserListViewController.swift in Sources */,
 				FDD080451B18336500756C2F /* Handler.swift in Sources */,
 				FD3E8DCC1B16AB3B00FD3E0B /* GroupAPI.swift in Sources */,
@@ -352,10 +362,11 @@
 				FD3E8DD31B16AB3B00FD3E0B /* AuthViewController.swift in Sources */,
 				FD3E8DD11B16AB3B00FD3E0B /* MainViewController.swift in Sources */,
 				FD3E8DD01B16AB3B00FD3E0B /* GroupViewController.swift in Sources */,
-				FDD080431B180D9700756C2F /* TableUtils.swift in Sources */,
 				FD1A67BD1AF4773D002B25A0 /* Var.swift in Sources */,
 				FDD0804B1B1872DD00756C2F /* TWMessageBarManager.m in Sources */,
 				FD3E8DD41B16AB3B00FD3E0B /* UserInfoViewController.swift in Sources */,
+				FD4C96FE1B194D0000FF4D8D /* ColorUtils.swift in Sources */,
+				FD4C97001B194FFB00FF4D8D /* UIColorExtension.swift in Sources */,
 				FD3E8DDD1B16C14A00FD3E0B /* json.swift in Sources */,
 				FD3E8DCF1B16AB3B00FD3E0B /* FriendViewController.swift in Sources */,
 				FD3E8DE11B16D76C00FD3E0B /* JSONUtils.swift in Sources */,
@@ -366,6 +377,7 @@
 				FD3E8DD81B16AB3B00FD3E0B /* MBProgressHUD.m in Sources */,
 				FD3E8DD21B16AB3B00FD3E0B /* ProfileViewController.swift in Sources */,
 				FD3E8DD71B16AB3B00FD3E0B /* Alamofire.swift in Sources */,
+				FD4C97021B19537200FF4D8D /* NamePhoneTableViewCell.swift in Sources */,
 				FD3E8DCB1B16AB3B00FD3E0B /* GroupAO.swift in Sources */,
 				FD3E8DCE1B16AB3B00FD3E0B /* UserAPI.swift in Sources */,
 			);

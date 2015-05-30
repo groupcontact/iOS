@@ -26,7 +26,9 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
                 return $0 < $1
             }
             tableView.reloadData()
-            tableView.tableFooterView = TableUtils.footerView("总共\(totalCount)位成员")
+            if let label = tableView.tableFooterView?.subviews[0] as? UILabel {
+                label.text = "总共\(totalCount)位成员"
+            }
         }
     }
     
@@ -41,7 +43,6 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
         // 基本设置
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
         
         // 退出群组的菜单
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "showMenu:")
@@ -63,6 +64,8 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
                         let indexPath = tableView.indexPathForSelectedRow()!
                         uiv.user = members[keys[indexPath.section]]![indexPath.row]
                         uiv.fromGroupMembers = true
+                        // 然后取消选中项
+                        tableView.deselectRowAtIndexPath(indexPath, animated: true)
                     }
                 }
             }
@@ -99,12 +102,8 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
     
     // MARK: - UITableViewDelegate
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("namePhone", forIndexPath: indexPath) as!UITableViewCell
-        
-        let user = members[keys[indexPath.section]]![indexPath.row]
-        cell.textLabel?.text = user.name
-        cell.detailTextLabel?.text = user.phone
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("namePhone", forIndexPath: indexPath) as!NamePhoneTableViewCell
+        cell.user = members[keys[indexPath.section]]![indexPath.row]
         return cell
     }
     

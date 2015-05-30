@@ -22,8 +22,9 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
                 return $0 < $1
             }
             tableView.reloadData()
-            tableView.tableFooterView = TableUtils.footerView("总共\(totalCount)位好友")
-            tableView.tableFooterView = tableView.tableFooterView
+            if let label = tableView.tableFooterView?.subviews[0] as? UILabel {
+                label.text = "总共\(totalCount)位好友"
+            }
         }
     }
 
@@ -34,7 +35,8 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
         // tableView基本配置
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         if (Var.friends.count > 0) {
             friends = Var.friends
@@ -51,6 +53,8 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
                     if let tableView = sender as? UITableView {
                         let indexPath = tableView.indexPathForSelectedRow()!
                         uiv.user = friends[keys[indexPath.section]]![indexPath.row]
+                        // 然后取消选中项
+                        tableView.deselectRowAtIndexPath(indexPath, animated: true)
                     }
                 }
             }
@@ -82,12 +86,8 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
     
     // MARK: - UITableViewDelegate
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("namePhone", forIndexPath: indexPath) as!UITableViewCell
-        
-        let user = friends[keys[indexPath.section]]![indexPath.row]
-        cell.textLabel?.text = user.name
-        cell.detailTextLabel?.text = user.phone
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("namePhone", forIndexPath: indexPath) as!NamePhoneTableViewCell
+        cell.user = friends[keys[indexPath.section]]![indexPath.row]
         return cell
     }
     

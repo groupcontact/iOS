@@ -21,9 +21,13 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
             tableView.reloadData()
             // 只有当模型数据数量大于0时才显示
             if displayedGroups.count > 0 {
-                tableView.tableFooterView = TableUtils.footerView("总共\(displayedGroups.count)个群组")
+                if let label = tableView.tableFooterView?.subviews[0] as? UILabel {
+                    label.text = "总共\(displayedGroups.count)个群组"
+                }
             } else {
-                tableView.tableFooterView = TableUtils.footerView("")
+                if let label = tableView.tableFooterView?.subviews[0] as? UILabel {
+                    label.text = ""
+                }
             }
         }
     }
@@ -37,7 +41,8 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         // tableView基本设置
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         if (Var.groups.count > 0) {
             groups = Var.groups
@@ -62,9 +67,12 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
             if identifier == "showUserList" {
                 if let ulv = segue.destinationViewController as? UserListViewController {
                     if let tableView = sender as? UITableView {
-                        let group = groups[tableView.indexPathForSelectedRow()!.row]
+                        let indexPath = tableView.indexPathForSelectedRow()!
+                        let group = groups[indexPath.row]
                         ulv.title = group.name
                         ulv.gid = group.gid
+                        // 然后取消选中项
+                        tableView.deselectRowAtIndexPath(indexPath, animated: true)
                     }
                 }
             }
@@ -93,12 +101,8 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
     
     // MARK: - UITableDelegate
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("nameDesc", forIndexPath: indexPath) as! UITableViewCell
-        
-        let group = displayedGroups[indexPath.row]
-        cell.textLabel?.text = group.name
-        cell.detailTextLabel?.text = group.desc
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("nameDesc", forIndexPath: indexPath) as! NameDescTableViewCell
+        cell.group = displayedGroups[indexPath.row]
         return cell
     }
     
@@ -141,7 +145,8 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
                     let result = $0
                     // 成功加入群组
                     if result.status == 1 {
-                        TWMessageBarManager.sharedInstance().showMessageWithTitle(group.name, description: "成功加入", type: TWMessageBarMessageType.Success)
+                        TWMessageBarManager.sharedInstance().showMessageWithTitle(group.name, description: "成功加入", type: TWMessageBarMessageType.Success,
+                            statusBarStyle: UIStatusBarStyle.Default, callback: nil)
                     } else {
                         TWMessageBarManager.sharedInstance().showMessageWithTitle(group.name, description: result.info, type: TWMessageBarMessageType.Error)
                     }
@@ -171,6 +176,10 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         searchBar.text = ""
         // 失去编辑焦点
         searchBar.resignFirstResponder()
+        // 显示TabBar
+        self.tabBarController?.tabBar.hidden = false
+        // tableView的设置
+        self.tableView.bounces = true
         // 退出搜索模式
         searchMode = false
     }
@@ -185,6 +194,10 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
                 button.setTitle("取消", forState: UIControlState.Normal)
             }
         }
+        // 隐藏TabBar
+        self.tabBarController?.tabBar.hidden = true
+        // tableView的设置
+        self.tableView.bounces = false
         // 进入搜索模式
         searchMode = true
     }
