@@ -37,7 +37,7 @@ class Req {
     
     // DELETE请求
     class func delete(url: String, cb: (JSON?) -> ()) {
-        Alamofire.request(.GET, url).responseString {
+        Alamofire.request(.DELETE, url).responseString {
             (_, _, string, _) in
             Handler.JSON_HANDLER(string, cb: cb)
         }

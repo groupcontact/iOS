@@ -53,6 +53,7 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
                     if let tableView = sender as? UITableView {
                         let indexPath = tableView.indexPathForSelectedRow()!
                         uiv.user = friends[keys[indexPath.section]]![indexPath.row]
+                        uiv.fromUserFriends = true
                         // 然后取消选中项
                         tableView.deselectRowAtIndexPath(indexPath, animated: true)
                     }

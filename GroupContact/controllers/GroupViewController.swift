@@ -151,17 +151,17 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
                     }
                 }
             }
-            });
+            })
         alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) {
             if let action = $0 {
                 // 不关心
             }
-            });
+            })
         alert.addTextFieldWithConfigurationHandler() {
             (textField) in
             textField.placeholder = "访问密码"
             textField.secureTextEntry = true
-        };
+        }
         if let ppc = alert.popoverPresentationController {
             ppc.sourceView = tableView
         }
