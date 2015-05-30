@@ -55,11 +55,15 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         if let hidden = navigationController?.navigationBarHidden {
             if hidden {
                 leaveSearchMode()
             }
         }
+        
+        refreshData(nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -87,9 +91,11 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
             return
         }
         UserAPI.listGroup(Var.uid) {
-            self.groups = $0
-            Var.groups = $0
-            
+            let result = $0
+            if result.count > 0 {
+                self.groups = result
+                Var.groups = result
+            }
             sender?.endRefreshing()
         }
     }

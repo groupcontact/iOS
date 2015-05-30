@@ -64,6 +64,9 @@
 		FD4C974B1B198C4800FF4D8D /* UMRadialView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4C972D1B198C4800FF4D8D /* UMRadialView.m */; };
 		FD4C974C1B198C4800FF4D8D /* UMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4C972F1B198C4800FF4D8D /* UMTextView.m */; };
 		FD4C974D1B198C4800FF4D8D /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD4C97321B198C4800FF4D8D /* libUMessage_Sdk_1.1.0.a */; };
+		FD4C974F1B199EBE00FF4D8D /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C974E1B199EBE00FF4D8D /* AddUserViewController.swift */; };
+		FD4C97511B199EE800FF4D8D /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C97501B199EE800FF4D8D /* CreateGroupViewController.swift */; };
+		FD4C97531B199EFD00FF4D8D /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C97521B199EFD00FF4D8D /* EditUserViewController.swift */; };
 		FDC31B1D1AEF35420073A77C /* Let.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC31B1C1AEF35420073A77C /* Let.swift */; };
 		FDD080451B18336500756C2F /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD080441B18336500756C2F /* Handler.swift */; };
 		FDD0804B1B1872DD00756C2F /* TWMessageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD0804A1B1872DD00756C2F /* TWMessageBarManager.m */; };
@@ -157,6 +160,9 @@
 		FD4C97301B198C4800FF4D8D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMFeedbackLocalizable.strings"; sourceTree = "<group>"; };
 		FD4C97321B198C4800FF4D8D /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		FD4C97331B198C4800FF4D8D /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		FD4C974E1B199EBE00FF4D8D /* AddUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		FD4C97501B199EE800FF4D8D /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		FD4C97521B199EFD00FF4D8D /* EditUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
 		FDC31B1C1AEF35420073A77C /* Let.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Let.swift; sourceTree = "<group>"; };
 		FDD080441B18336500756C2F /* Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
 		FDD080491B1872DD00756C2F /* TWMessageBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWMessageBarManager.h; sourceTree = "<group>"; };
@@ -218,6 +224,9 @@
 				FD3E8DBC1B16AB3B00FD3E0B /* AuthViewController.swift */,
 				FD3E8DBD1B16AB3B00FD3E0B /* UserInfoViewController.swift */,
 				FD3E8DBE1B16AB3B00FD3E0B /* UserListViewController.swift */,
+				FD4C974E1B199EBE00FF4D8D /* AddUserViewController.swift */,
+				FD4C97501B199EE800FF4D8D /* CreateGroupViewController.swift */,
+				FD4C97521B199EFD00FF4D8D /* EditUserViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -542,6 +551,7 @@
 				FD3E8DE11B16D76C00FD3E0B /* JSONUtils.swift in Sources */,
 				FDC31B1D1AEF35420073A77C /* Let.swift in Sources */,
 				FD4C97061B19878300FF4D8D /* ToastUtils.swift in Sources */,
+				FD4C97531B199EFD00FF4D8D /* EditUserViewController.swift in Sources */,
 				FD42A30D1AECB218003495C3 /* AppDelegate.swift in Sources */,
 				FD3E8DE61B16FD0E00FD3E0B /* BarItem.m in Sources */,
 				FD3E8DCD1B16AB3B00FD3E0B /* UserAO.swift in Sources */,
@@ -550,9 +560,11 @@
 				FD3E8DD71B16AB3B00FD3E0B /* Alamofire.swift in Sources */,
 				FD4C97021B19537200FF4D8D /* NamePhoneTableViewCell.swift in Sources */,
 				FD4C97471B198C4800FF4D8D /* UMChatTableViewCell.m in Sources */,
+				FD4C974F1B199EBE00FF4D8D /* AddUserViewController.swift in Sources */,
 				FD3E8DCB1B16AB3B00FD3E0B /* GroupAO.swift in Sources */,
 				FD3E8DCE1B16AB3B00FD3E0B /* UserAPI.swift in Sources */,
 				FD4C97481B198C4800FF4D8D /* UMChatToolBar.m in Sources */,
+				FD4C97511B199EE800FF4D8D /* CreateGroupViewController.swift in Sources */,
 				FD4C97491B198C4800FF4D8D /* UMFullScreenPhotoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -122,6 +122,7 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
                     let result = $0
                     if result.status == 1 {
                         ToastUtils.info("删除好友", message: "成功删除\(self.user.name)")
+                        self.navigationController?.popViewControllerAnimated(true)
                     } else {
                         ToastUtils.error("删除好友", message: result.info)
                     }
@@ -135,6 +136,7 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
                     let result = $0
                     if result.status == 1 {
                         ToastUtils.info("添加好友", message: "成功添加\(self.user.name)")
+                        self.navigationController?.popViewControllerAnimated(true)
                     } else {
                         ToastUtils.error("添加好友", message: result.info)
                     }

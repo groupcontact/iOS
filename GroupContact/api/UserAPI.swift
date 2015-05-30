@@ -32,7 +32,7 @@ class UserAPI {
      * @callback: 处理返回结果的回调函数
      */
     class func save(user: UserAO, password: String, callback: (GeneralAO) -> ()) {
-        let url = "\(Let.BASE_URL)/\(user.uid!)"
+        let url = "\(Let.BASE_URL)/users/\(user.uid!)"
         Req.put(url, parameters: [
             "name": user.name,
             "phone": user.phone,

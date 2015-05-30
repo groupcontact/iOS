@@ -29,6 +29,11 @@ class ProfileViewController: UITableViewController, UITableViewDelegate {
         nameLabelView.text = name
         avatarLabelView.backgroundColor = ColorUtils.colorOf(name)
         avatarLabelView.text = name.substringFromIndex(name.endIndex.predecessor())
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         if let user = Var.user {
             phoneLabelView.text = user.phone
         }

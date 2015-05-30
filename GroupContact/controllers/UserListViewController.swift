@@ -115,12 +115,20 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
     func showMenu(sender: UIBarButtonItem) {
         var alert = UIAlertController(title: self.title, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         alert.addAction(UIAlertAction(title: "退出群组", style: UIAlertActionStyle.Destructive) {
-                let action = $0
-            
-            });
+            let action = $0
+            UserAPI.leave(Var.uid, password: Var.password, gid: self.gid!) {
+                let result = $0
+                if result.status == 1 {
+                    ToastUtils.info("退出群组", message: "成功退出\(self.title!)")
+                    self.navigationController?.popViewControllerAnimated(true)
+                } else {
+                    ToastUtils.error("退出群组", message: result.info)
+                }
+            }
+        })
         alert.addAction(UIAlertAction(title: "取消", style: .Cancel) {
-                let action = $0
-            });
+            let action = $0
+        })
         alert.modalPresentationStyle = .Popover
         let ppc = alert.popoverPresentationController
         ppc?.barButtonItem = sender

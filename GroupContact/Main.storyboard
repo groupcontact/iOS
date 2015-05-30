@@ -288,7 +288,7 @@
         <!--添加朋友-->
         <scene sceneID="sPp-P5-v4o">
             <objects>
-                <viewController title="添加朋友" hidesBottomBarWhenPushed="YES" id="HrQ-eJ-lNU" sceneMemberID="viewController">
+                <viewController title="添加朋友" hidesBottomBarWhenPushed="YES" id="HrQ-eJ-lNU" customClass="AddUserViewController" customModule="GroupContact" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aAf-2d-ORi"/>
                         <viewControllerLayoutGuide type="bottom" id="8hN-dW-WW5"/>
@@ -297,11 +297,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4G-sg-YH5">
-                                <rect key="frame" x="16" y="72" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k9m-KQ-lLD">
                                 <rect key="frame" x="16" y="110" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -312,7 +307,15 @@
                                 <state key="normal" title="添加为好友">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addFriend:" destination="HrQ-eJ-lNU" eventType="touchUpInside" id="ahg-DD-c9I"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4G-sg-YH5">
+                                <rect key="frame" x="16" y="72" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -327,6 +330,10 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="nameTextField" destination="a4G-sg-YH5" id="N0T-dH-7OA"/>
+                        <outlet property="phoneTextField" destination="k9m-KQ-lLD" id="mbm-ND-a6u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQZ-bi-aLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -694,7 +701,7 @@
         <!--更改信息-->
         <scene sceneID="sGS-EH-rSF">
             <objects>
-                <viewController title="更改信息" hidesBottomBarWhenPushed="YES" id="xKw-Qd-vaL" sceneMemberID="viewController">
+                <viewController title="更改信息" hidesBottomBarWhenPushed="YES" id="xKw-Qd-vaL" customClass="EditUserViewController" customModule="GroupContact" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0AA-MQ-zAN"/>
                         <viewControllerLayoutGuide type="bottom" id="3PO-vm-1fP"/>
@@ -703,18 +710,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="18205082827" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sq5-M2-tit">
-                                <rect key="frame" x="16" y="100" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮箱" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JG5-9H-K1j">
                                 <rect key="frame" x="16" y="138" width="34" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="877498144@qq.com" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yMG-Rk-ZcB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yMG-Rk-ZcB">
                                 <rect key="frame" x="16" y="167" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -725,7 +727,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zhouhaibing089" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pck-3B-ptZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pck-3B-ptZ">
                                 <rect key="frame" x="16" y="233" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -735,6 +737,9 @@
                                 <state key="normal" title="保存">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="save:" destination="xKw-Qd-vaL" eventType="touchUpInside" id="Beb-Ph-UWc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN0-d3-mTV">
                                 <rect key="frame" x="16" y="72" width="51" height="20.5"/>
@@ -742,6 +747,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sq5-M2-tit">
+                                <rect key="frame" x="16" y="100" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -764,36 +774,15 @@
                             <constraint firstItem="yMG-Rk-ZcB" firstAttribute="top" secondItem="JG5-9H-K1j" secondAttribute="bottom" constant="8" symbolic="YES" id="zkq-mz-Dp6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="yMG-Rk-ZcB" id="9kt-SL-nlc"/>
+                        <outlet property="phoneTextField" destination="sq5-M2-tit" id="e52-7Y-PVu"/>
+                        <outlet property="wechatTextField" destination="Pck-3B-ptZ" id="N1N-MF-v7s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vID-Ah-1yq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="637" y="1407"/>
-        </scene>
-        <!--我的二维码-->
-        <scene sceneID="fsg-13-tNH">
-            <objects>
-                <viewController title="我的二维码" hidesBottomBarWhenPushed="YES" id="Xij-sZ-MS0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wNB-U1-f65"/>
-                        <viewControllerLayoutGuide type="bottom" id="gNN-ne-cbt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LCa-95-twg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzY-yV-Nfi">
-                                <rect key="frame" x="161" y="147" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8jP-Hm-LAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="637" y="2123"/>
         </scene>
         <!--我-->
         <scene sceneID="fcy-Pz-X6V">
@@ -965,7 +954,6 @@
                         <outlet property="nameLabelView" destination="peV-0p-g1B" id="mbx-c0-JCG"/>
                         <outlet property="phoneLabelView" destination="e6M-Kx-bA1" id="ubb-kt-LTk"/>
                         <segue destination="xKw-Qd-vaL" kind="show" identifier="editProfile" id="ASs-Ib-I7m"/>
-                        <segue destination="Xij-sZ-MS0" kind="show" identifier="showQRCode" id="1hK-pv-mxc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JI-EB-njg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -975,7 +963,7 @@
         <!--创建群组-->
         <scene sceneID="Wxg-VN-kKc">
             <objects>
-                <viewController title="创建群组" hidesBottomBarWhenPushed="YES" id="zTc-1W-aSG" sceneMemberID="viewController">
+                <viewController title="创建群组" hidesBottomBarWhenPushed="YES" id="zTc-1W-aSG" customClass="CreateGroupViewController" customModule="GroupContact" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="erD-B7-e9j"/>
                         <viewControllerLayoutGuide type="bottom" id="l9X-Mo-Eht"/>
@@ -994,33 +982,58 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="访问密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fe-3o-HR6">
-                                <rect key="frame" x="16" y="148" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9W-v6-W8p">
-                                <rect key="frame" x="277" y="186" width="60" height="30"/>
+                                <rect key="frame" x="270" y="224" width="60" height="30"/>
                                 <state key="normal" title="创建群组">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createGroup:" destination="zTc-1W-aSG" eventType="touchUpInside" id="6lY-yg-87v"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="管理密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RNa-vC-Lx5">
+                                <rect key="frame" x="16" y="186" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="访问密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fe-3o-HR6">
+                                <rect key="frame" x="16" y="148" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4fe-3o-HR6" firstAttribute="top" secondItem="KYf-9I-CXN" secondAttribute="bottom" constant="8" symbolic="YES" id="00a-0f-sFH"/>
+                            <constraint firstItem="O9W-v6-W8p" firstAttribute="top" secondItem="RNa-vC-Lx5" secondAttribute="bottom" constant="8" id="3om-ut-TZ5"/>
                             <constraint firstItem="gR7-iv-FEH" firstAttribute="leading" secondItem="lnk-DY-ckM" secondAttribute="leadingMargin" id="6m4-WC-3Wq"/>
+                            <constraint firstAttribute="centerX" secondItem="O9W-v6-W8p" secondAttribute="centerX" id="Bsb-9U-a3g"/>
                             <constraint firstItem="4fe-3o-HR6" firstAttribute="centerX" secondItem="O9W-v6-W8p" secondAttribute="centerX" constant="-7" id="Enw-EW-dbe"/>
                             <constraint firstItem="KYf-9I-CXN" firstAttribute="leading" secondItem="4fe-3o-HR6" secondAttribute="leading" id="Mnh-o9-bay"/>
+                            <constraint firstItem="4fe-3o-HR6" firstAttribute="leading" secondItem="RNa-vC-Lx5" secondAttribute="leading" id="SOz-uY-KCn"/>
                             <constraint firstItem="4fe-3o-HR6" firstAttribute="trailing" secondItem="KYf-9I-CXN" secondAttribute="trailing" id="Vrr-Bf-BKN"/>
                             <constraint firstItem="KYf-9I-CXN" firstAttribute="trailing" secondItem="gR7-iv-FEH" secondAttribute="trailing" id="Y5d-M0-cqz"/>
+                            <constraint firstItem="RNa-vC-Lx5" firstAttribute="top" secondItem="4fe-3o-HR6" secondAttribute="bottom" constant="8" id="YVr-fL-6gc"/>
                             <constraint firstItem="gR7-iv-FEH" firstAttribute="top" secondItem="erD-B7-e9j" secondAttribute="bottom" constant="8" symbolic="YES" id="agP-LE-MFs"/>
                             <constraint firstItem="KYf-9I-CXN" firstAttribute="leading" secondItem="gR7-iv-FEH" secondAttribute="leading" id="iYk-hs-s4W"/>
                             <constraint firstItem="O9W-v6-W8p" firstAttribute="top" secondItem="4fe-3o-HR6" secondAttribute="bottom" constant="8" id="nbd-gD-IGT"/>
                             <constraint firstItem="gR7-iv-FEH" firstAttribute="trailing" secondItem="lnk-DY-ckM" secondAttribute="trailingMargin" id="p0h-9K-NWw"/>
+                            <constraint firstItem="4fe-3o-HR6" firstAttribute="trailing" secondItem="RNa-vC-Lx5" secondAttribute="trailing" id="rgi-8V-6Xj"/>
                             <constraint firstItem="KYf-9I-CXN" firstAttribute="top" secondItem="gR7-iv-FEH" secondAttribute="bottom" constant="8" symbolic="YES" id="zcD-bh-E4D"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Enw-EW-dbe"/>
+                                <exclude reference="nbd-gD-IGT"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="accessTextField" destination="4fe-3o-HR6" id="fXm-5O-5uK"/>
+                        <outlet property="descTextField" destination="KYf-9I-CXN" id="Ym6-Fj-ZNC"/>
+                        <outlet property="modifyTextField" destination="RNa-vC-Lx5" id="Zl9-Ej-tN1"/>
+                        <outlet property="nameTextField" destination="gR7-iv-FEH" id="YIe-aN-Zy8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZM-YM-JBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

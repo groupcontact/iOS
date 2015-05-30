@@ -46,6 +46,12 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        refreshData(nil)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if identifier == "showUserInfo" {
@@ -65,9 +71,11 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
     // MARK: - Action函数
     @IBAction func refreshData(sender: UIRefreshControl?) {
         UserAPI.listFriend(Var.uid) {
-            self.friends = $0
-            Var.friends = $0
-            
+            let result = $0
+            if result.count > 0 {
+                self.friends = $0
+                Var.friends = $0
+            }
             sender?.endRefreshing()
         }
     }
