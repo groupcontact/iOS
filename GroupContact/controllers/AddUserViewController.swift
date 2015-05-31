@@ -8,13 +8,23 @@
 
 import UIKit
 
-class AddUserViewController: UIViewController {
+class AddUserViewController: UITableViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var phoneTextField: UITextField!
     
-    @IBAction func addFriend(sender: UIButton) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        tableView.delegate = self
+        tableView.contentInset = UIEdgeInsetsMake(-16, 0, 0, 0)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "tick"), style: UIBarButtonItemStyle.Plain, target: self, action: "add:")
+    }
+    
+    func add(sender: UIBarButtonItem) {
         let name = nameTextField.text
         let phone = phoneTextField.text
         
@@ -27,5 +37,10 @@ class AddUserViewController: UIViewController {
                 ToastUtils.error("添加好友", message: result.info)
             }
         }
+    }
+    
+    // MARK: - UITableViewDelegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

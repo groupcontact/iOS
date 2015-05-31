@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditUserViewController: UIViewController {
+class EditUserViewController: UITableViewController, UITableViewDelegate {
 
     @IBOutlet weak var phoneTextField: UITextField!
    
@@ -18,6 +18,13 @@ class EditUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        tableView.delegate = self
+        tableView.contentInset = UIEdgeInsetsMake(-16, 0, 0, 0)
+        
+        // 保存菜单
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: UIBarButtonItemStyle.Plain, target: self, action: "save:")
         
         if let user = Var.user {
             phoneTextField.text = user.phone
@@ -31,7 +38,12 @@ class EditUserViewController: UIViewController {
         }
     }
     
-    @IBAction func save(sender: UIButton) {
+    // MARK: - UITableViewDelegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func save(sender: UIBarButtonItem) {
         let phone = phoneTextField.text
         let ext = [
             "email": emailTextField.text,

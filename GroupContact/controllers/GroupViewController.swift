@@ -41,8 +41,6 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         // tableView基本设置
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
         
         if (Var.groups.count > 0) {
             groups = Var.groups

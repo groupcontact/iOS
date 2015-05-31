@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateGroupViewController: UIViewController {
+class CreateGroupViewController: UITableViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -18,8 +18,18 @@ class CreateGroupViewController: UIViewController {
     
     @IBOutlet weak var modifyTextField: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        tableView.delegate = self
+        tableView.contentInset = UIEdgeInsetsMake(-16, 0, 0, 0)
+        
+        // 保存菜单
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "tick"), style: UIBarButtonItemStyle.Plain, target: self, action: "create:")
+    }
     
-    @IBAction func createGroup(sender: UIButton) {
+    func create(sender: UIButton) {
         let name = nameTextField.text
         let desc = descTextField.text
         let access = accessTextField.text
@@ -34,5 +44,10 @@ class CreateGroupViewController: UIViewController {
                 ToastUtils.error("创建群组", message: result.info!)
             }
         }
+    }
+    
+    // MARK: - UITableViewDelegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
