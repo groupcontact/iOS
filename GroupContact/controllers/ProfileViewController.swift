@@ -54,13 +54,17 @@ class ProfileViewController: UITableViewController, UITableViewDelegate {
             self.navigationController?.pushViewController(UMFeedback.feedbackViewController(), animated: true)
         } else if (indexPath.section == 1 && indexPath.row == 2) {
             // 进入登录页面
+            performSegueWithIdentifier("backLogin", sender: tableView)
         }
        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
-            
+            if identifier == "backLogin" {
+                // 清除所有数据
+                Var.clearAll()
+            }
         }
     }
     

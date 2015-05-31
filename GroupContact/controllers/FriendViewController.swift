@@ -46,12 +46,6 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        refreshData(nil)
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if identifier == "showUserInfo" {

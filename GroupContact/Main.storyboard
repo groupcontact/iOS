@@ -62,12 +62,12 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KcP-Si-z1Y">
                                         <rect key="frame" x="8" y="8" width="584" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="六位数字密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1te-Gt-FVM">
                                         <rect key="frame" x="8" y="46" width="584" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOq-7p-RHU">
                                         <rect key="frame" x="285" y="84" width="30" height="30"/>
@@ -84,12 +84,12 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CbP-S8-mwS">
                                                 <rect key="frame" x="8" y="8" width="584" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置六位数字密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-eG-7R8">
                                                 <rect key="frame" x="8" y="46" width="584" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置姓名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V87-NE-ttp">
                                                 <rect key="frame" x="8" y="84" width="584" height="30"/>
@@ -954,6 +954,7 @@
                         <outlet property="nameLabelView" destination="peV-0p-g1B" id="mbx-c0-JCG"/>
                         <outlet property="phoneLabelView" destination="e6M-Kx-bA1" id="ubb-kt-LTk"/>
                         <segue destination="xKw-Qd-vaL" kind="show" identifier="editProfile" id="ASs-Ib-I7m"/>
+                        <segue destination="6N6-Ws-FgS" kind="showDetail" identifier="backLogin" id="JXn-mn-Xgb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JI-EB-njg" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,6 +9,7 @@ import Foundation
  */
 struct Var {
     
+    // MARK: - NSUserDefaults和NSFileManager
     // 程式的Key/Value存储区域
     private static let defaults = NSUserDefaults.standardUserDefaults()
     // 文件管理器
@@ -16,6 +17,7 @@ struct Var {
     // 是否已经初始化好了
     private static var initialized = false
     
+    // MARK: - 配置存储
     // 用户的id
     static var uid = Int64(0) {
         didSet {
@@ -70,6 +72,7 @@ struct Var {
         }
     }
     
+    // MARK: - 缓存的文件内容
     // 用户的完整信息
     static var user: UserAO? {
         didSet {
@@ -103,10 +106,6 @@ struct Var {
     // 好友列表信息
     static var friends = [String: [UserAO]]() {
         didSet {
-            // 没有数据就没必要写文件了
-            if friends.count == 0 {
-                return
-            }
             // 还没初始化好
             if !initialized {
                 return
@@ -142,10 +141,6 @@ struct Var {
     // 群组列表信息
     static var groups = [GroupAO]() {
         didSet {
-            // 没有数据就没必要写文件了
-            if groups.count == 0 {
-                return
-            }
             // 还没初始化好
             if !initialized {
                 return
@@ -173,6 +168,7 @@ struct Var {
         }
     }
     
+    // MARK: 初始化和清理
     // 初始化数据
     static func initVar() {
         // 从NSUserDefaults中初始化数据
@@ -231,9 +227,14 @@ struct Var {
     }
     
     /*
-     * 清除所有的缓存数据
+     * 清除影响重新登录的所有数据
      */
     static func clearAll() {
+        defaults.removeObjectForKey("uid")
+        Var.uid = 0
+        
+        Var.friends = [String: [UserAO]]()
+        Var.groups = [GroupAO]()
         
     }
 }

@@ -35,12 +35,16 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
         phoneLabel.text = user.phone
         let ext = JSON(string: user.ext)
         if let email = ext["email"].asString {
-            emailLabel.text = email
-            emailLabel.textColor = UIColor.darkGrayColor()
+            if email != "" {
+                emailLabel.text = email
+                emailLabel.textColor = UIColor.darkGrayColor()
+            }
         }
         if let wechat = ext["wechat"].asString {
-            wechatLabel.text = wechat
-            wechatLabel.textColor = UIColor.darkGrayColor()
+            if wechat != "" {
+                wechatLabel.text = wechat
+                wechatLabel.textColor = UIColor.darkGrayColor()
+            }
         }
         
         // tableView的基本设置
@@ -73,20 +77,20 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
     func showActionsOnPhone(phone: String) {
         var alert = UIAlertController(title: phone, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         alert.addAction(UIAlertAction(title: "呼叫", style: UIAlertActionStyle.Default) {
-            let action = $0
+            _ in
             UIApplication.sharedApplication().openURL(NSURL(string: "tel:\(phone)")!)
             });
         alert.addAction(UIAlertAction(title: "发送短信", style: UIAlertActionStyle.Default) {
-            let action = $0
+            _ in
             UIApplication.sharedApplication().openURL(NSURL(string: "sms:\(phone)")!)
             });
         alert.addAction(UIAlertAction(title: "复制", style: UIAlertActionStyle.Default) {
-            let action = $0
+            _ in
             UIPasteboard.generalPasteboard().string = phone
             ToastUtils.info(phone, message: "复制成功")
             });
         alert.addAction(UIAlertAction(title: "取消", style: .Cancel) {
-            let action = $0
+            _ in
             });
         alert.modalPresentationStyle = .Popover
         presentViewController(alert, animated: true, completion: nil)
@@ -96,16 +100,15 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
     func showActionsOnEmail(email: String) {
         var alert = UIAlertController(title: email, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         alert.addAction(UIAlertAction(title: "发送邮件", style: UIAlertActionStyle.Default) {
-            let action = $0
-            
+            _ in 
         })
         alert.addAction(UIAlertAction(title: "复制", style: UIAlertActionStyle.Default) {
-            let action = $0
+            _ in
             UIPasteboard.generalPasteboard().string = email
             ToastUtils.info(email, message: "复制成功")
             })
         alert.addAction(UIAlertAction(title: "取消", style: .Cancel) {
-            let action = $0
+            _ in
             })
         
         alert.modalPresentationStyle = .Popover
@@ -117,7 +120,7 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
         var alert = UIAlertController(title: self.title, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         if fromUserFriends {
             alert.addAction(UIAlertAction(title: "删除好友", style: UIAlertActionStyle.Destructive) {
-                let action = $0
+                _ in
                 UserAPI.deleteFriend(Var.uid, password: Var.password, fid: self.user.uid!) {
                     let result = $0
                     if result.status == 1 {
@@ -144,7 +147,7 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
             })
         }
         alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) {
-            let action = $0
+            _ in
             // 不关心
         })
         alert.modalPresentationStyle = .Popover

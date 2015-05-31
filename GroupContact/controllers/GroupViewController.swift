@@ -62,8 +62,6 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
                 leaveSearchMode()
             }
         }
-        
-        refreshData(nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -145,7 +143,7 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
     func showJoinGroupAlert(group: GroupAO) {
         var alert = UIAlertController(title: "\(group.name)", message: "输入访问密码", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "加入", style: UIAlertActionStyle.Default) {
-            if let action = $0 {
+            _ in
                 let keyEntered = (alert.textFields?.first as! UITextField).text
                 UserAPI.join(Var.uid, password: Var.password, gid: group.gid!, accessToken: keyEntered) {
                     let result = $0
@@ -156,21 +154,18 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
                         ToastUtils.error(group.name, message: result.info)
                     }
                 }
-            }
             })
         alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) {
-            if let action = $0 {
-                // 不关心
-            }
+            _ in 
             })
         alert.addTextFieldWithConfigurationHandler() {
             (textField) in
             textField.placeholder = "访问密码"
             textField.secureTextEntry = true
         }
-        if let ppc = alert.popoverPresentationController {
-            ppc.sourceView = tableView
-        }
+//        if let ppc = alert.popoverPresentationController {
+//            ppc.sourceView = tableView
+//        }
         presentViewController(alert, animated: true, completion: nil)
     }
     
