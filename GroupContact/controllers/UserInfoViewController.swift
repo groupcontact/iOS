@@ -100,7 +100,8 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
     func showActionsOnEmail(email: String) {
         var alert = UIAlertController(title: email, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         alert.addAction(UIAlertAction(title: "发送邮件", style: UIAlertActionStyle.Default) {
-            _ in 
+            _ in
+            UIApplication.sharedApplication().openURL(NSURL(string: "mailto:\(email)")!)
         })
         alert.addAction(UIAlertAction(title: "复制", style: UIAlertActionStyle.Default) {
             _ in
