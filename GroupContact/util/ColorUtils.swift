@@ -28,7 +28,27 @@ struct ColorUtils {
     
     // 针对字符串给出颜色
     static func colorOf(key: String) -> UIColor {
-        return MATERIAL[abs(key.hashValue) % MATERIAL.count]
+        return MATERIAL[abs(Int(key.javaHashValue)) % MATERIAL.count]
+    }
+    
+}
+
+extension String {
+    
+    // 保证和Android版本一样的颜色
+    var javaHashValue: Int32 {
+        get {
+            var hash: Int32 = 0
+            if count(self) == 0 {
+                return hash
+            }
+            for ch in self {
+                let chs = String(ch).unicodeScalars
+                let signed = Int32(bitPattern: chs[chs.startIndex].value)
+                hash = 31 * hash + signed
+            }
+            return hash
+        }
     }
     
 }
