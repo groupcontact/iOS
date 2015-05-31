@@ -119,6 +119,8 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         else {
             performSegueWithIdentifier("showUserList", sender: tableView)
         }
+        // 取消选中
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     // MARK: - UISearchBarDelegate
@@ -173,26 +175,31 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
      * 退出搜索模式
      */
     func leaveSearchMode() {
-        // 不显示取消按钮
-        searchBar.setShowsCancelButton(false, animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.displayedGroups = groups
-        // 清空输入的内容
-        searchBar.text = ""
-        // 失去编辑焦点
-        searchBar.resignFirstResponder()
-        // 显示TabBar
-        self.tabBarController?.tabBar.hidden = false
-        // tableView的设置
-        self.tableView.bounces = true
-        // 退出搜索模式
-        searchMode = false
+        if searchMode {
+            // 不显示取消按钮
+            searchBar.setShowsCancelButton(false, animated: true)
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            self.displayedGroups = groups
+            // 清空输入的内容
+            searchBar.text = ""
+            // 失去编辑焦点
+            searchBar.resignFirstResponder()
+            // 显示TabBar
+            self.tabBarController?.tabBar.hidden = false
+            // tableView的设置
+            self.tableView.bounces = true
+            // 退出搜索模式
+            searchMode = false
+        }
     }
     
     /*
      * 进入搜索模式
      */
     func enterSearchMode() {
+        if searchMode {
+            return
+        }
         self.displayedGroups = [GroupAO]()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         // 显示取消按钮

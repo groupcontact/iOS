@@ -36,15 +36,15 @@ struct ColorUtils {
 extension String {
     
     // 保证和Android版本一样的颜色
-    var javaHashValue: Int32 {
+    var javaHashValue: Int64 {
         get {
-            var hash: Int32 = 0
+            var hash: Int64 = 0
             if count(self) == 0 {
                 return hash
             }
             for ch in self {
                 let chs = String(ch).unicodeScalars
-                let signed = Int32(bitPattern: chs[chs.startIndex].value)
+                let signed = Int64(bitPattern: UInt64(chs[chs.startIndex].value))
                 hash = 31 * hash + signed
             }
             return hash

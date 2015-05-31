@@ -1,21 +1,18 @@
-//
-//  ProfileViewController.swift
-//  GroupContact
-//
-//  Created by Haibing Zhou on 4/26/15.
-//  Copyright (c) 2015 Haibing Zhou. All rights reserved.
-//
-
 import UIKit
 
+/*
+ * 个人主页, 主要是提供一系列菜单
+ */
 class ProfileViewController: UITableViewController, UITableViewDelegate {
 
-    @IBOutlet weak var avatarLabelView: UILabel!
+    // MARK: - IBOutlet成员列表
+    @IBOutlet weak var avatarLabelView: NoClearLabel!
     
     @IBOutlet weak var nameLabelView: UILabel!
     
     @IBOutlet weak var phoneLabelView: UILabel!
     
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +24,7 @@ class ProfileViewController: UITableViewController, UITableViewDelegate {
         
         let name = Var.name
         nameLabelView.text = name
-        avatarLabelView.backgroundColor = ColorUtils.colorOf(name)
+        avatarLabelView.myBackgroundColor = ColorUtils.colorOf(name)
         avatarLabelView.text = name.substringFromIndex(name.endIndex.predecessor())
     }
     
@@ -37,26 +34,8 @@ class ProfileViewController: UITableViewController, UITableViewDelegate {
         if let user = Var.user {
             phoneLabelView.text = user.phone
         }
-    }
-    
-    // 菜单点击跳转
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if (indexPath.section == 0) {
-            // 进入个人信息编辑页面
-            performSegueWithIdentifier("editProfile", sender: tableView)
-        } else if (indexPath.section == 1 && indexPath.row == 0) {
-            // 弹出修改密码页面
-            changePassword()
-        } else if (indexPath.section == 1 && indexPath.row == 1) {
-            // 进入意见反馈页面
-            self.navigationController?.pushViewController(UMFeedback.feedbackViewController(), animated: true)
-        } else if (indexPath.section == 1 && indexPath.row == 2) {
-            // 进入登录页面
-            performSegueWithIdentifier("backLogin", sender: tableView)
-        }
-       
+        self.tabBarController?.tabBar.hidden = false
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -68,6 +47,30 @@ class ProfileViewController: UITableViewController, UITableViewDelegate {
         }
     }
     
+    // MARK: - UITableViewDelegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if (indexPath.section == 0) {
+            // 进入个人信息编辑页面
+            performSegueWithIdentifier("editProfile", sender: tableView)
+        } else if (indexPath.section == 1 && indexPath.row == 0) {
+            // 弹出修改密码页面
+            changePassword()
+        } else if (indexPath.section == 1 && indexPath.row == 1) {
+            // 隐藏TabBar
+            self.tabBarController?.tabBar.hidden = true
+            // 进入意见反馈页面
+            self.navigationController?.pushViewController(UMFeedback.feedbackViewController(), animated: true)
+        } else if (indexPath.section == 1 && indexPath.row == 2) {
+            // 进入登录页面
+            performSegueWithIdentifier("backLogin", sender: tableView)
+        }
+       
+    }
+    
+    // MARK: - 其他方法
+    /* 弹出修改密码的窗口 */
     func changePassword() {
         var alert = UIAlertController(title: "修改密码", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) {

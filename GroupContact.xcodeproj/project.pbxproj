@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD0A79C61B1ACB95003C133A /* NoClearLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A79C51B1ACB95003C133A /* NoClearLabel.swift */; };
 		FD1A67BD1AF4773D002B25A0 /* Var.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A67BC1AF4773D002B25A0 /* Var.swift */; };
 		FD3E8DC91B16AB3B00FD3E0B /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB01B16AB3B00FD3E0B /* AESCrypt.m */; };
 		FD3E8DCA1B16AB3B00FD3E0B /* GeneralAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E8DB21B16AB3B00FD3E0B /* GeneralAO.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD0A79C51B1ACB95003C133A /* NoClearLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoClearLabel.swift; path = view/NoClearLabel.swift; sourceTree = "<group>"; };
 		FD1A67BC1AF4773D002B25A0 /* Var.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Var.swift; sourceTree = "<group>"; };
 		FD3E8DAF1B16AB3B00FD3E0B /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
 		FD3E8DB01B16AB3B00FD3E0B /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 			children = (
 				FD4C97011B19537200FF4D8D /* NamePhoneTableViewCell.swift */,
 				FD4C97031B1958AA00FF4D8D /* NameDescTableViewCell.swift */,
+				FD0A79C51B1ACB95003C133A /* NoClearLabel.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				FD4C974B1B198C4800FF4D8D /* UMRadialView.m in Sources */,
 				FD3E8DCC1B16AB3B00FD3E0B /* GroupAPI.swift in Sources */,
 				FD3E8DDF1B16C40900FD3E0B /* Req.swift in Sources */,
+				FD0A79C61B1ACB95003C133A /* NoClearLabel.swift in Sources */,
 				FD3E8DCA1B16AB3B00FD3E0B /* GeneralAO.swift in Sources */,
 				FD3E8DD31B16AB3B00FD3E0B /* AuthViewController.swift in Sources */,
 				FD3E8DD11B16AB3B00FD3E0B /* MainViewController.swift in Sources */,

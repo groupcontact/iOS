@@ -2,7 +2,7 @@ import UIKit
 
 class NameDescTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var avatarLabel: UILabel!
+    @IBOutlet weak var avatarLabel: NoClearLabel!
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -15,7 +15,7 @@ class NameDescTableViewCell: UITableViewCell {
                 let name = g.name
                 let color = ColorUtils.colorOf(name)
                 nameLabel.text = name
-                avatarLabel.backgroundColor = color
+                avatarLabel.myBackgroundColor = color
                 avatarLabel.text = name.substringToIndex(name.startIndex.successor())
             }
         }

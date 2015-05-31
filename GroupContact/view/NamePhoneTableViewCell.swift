@@ -3,7 +3,7 @@ import UIKit
 class NamePhoneTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var avatarLabel: UILabel!
+    @IBOutlet weak var avatarLabel: NoClearLabel!
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -16,7 +16,7 @@ class NamePhoneTableViewCell: UITableViewCell {
                 let name = u.name
                 let color = ColorUtils.colorOf(u.name)
                 nameLabel.text = name
-                avatarLabel.backgroundColor = color
+                avatarLabel.myBackgroundColor = color
                 avatarLabel.text = name.substringFromIndex(name.endIndex.predecessor())
             }
         }
