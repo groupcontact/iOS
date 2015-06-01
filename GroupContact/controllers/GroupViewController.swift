@@ -3,7 +3,7 @@ import UIKit
 /*
  * 展示用户加入的群组列表
  */
-class GroupViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class GroupViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIAlertViewDelegate {
     
     // MARK: - Outlet成员
     @IBOutlet weak var searchBar: UISearchBar!
@@ -108,7 +108,10 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
         return cell
     }
     
+    var currentSelected = 0
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        currentSelected = indexPath.row
         // 如果是搜索模式, 提示输入加入密码
         if searchMode {
             showJoinGroupAlert(displayedGroups[indexPath.row])
@@ -141,32 +144,28 @@ class GroupViewController: UITableViewController, UITableViewDataSource, UITable
     
     // MARK: - 其他成员方法
     func showJoinGroupAlert(group: GroupAO) {
-        var alert = UIAlertController(title: "\(group.name)", message: "输入访问密码", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "加入", style: UIAlertActionStyle.Default) {
-            _ in
-                let keyEntered = (alert.textFields?.first as! UITextField).text
-                UserAPI.join(Var.uid, password: Var.password, gid: group.gid!, accessToken: keyEntered) {
-                    let result = $0
-                    // 成功加入群组
-                    if result.status == 1 {
-                        ToastUtils.info(group.name, message: "成功加入")
-                    } else {
-                        ToastUtils.error(group.name, message: result.info)
-                    }
+        let alert = UIAlertView(title: "\(group.name)", message: "输入访问密码", delegate: self, cancelButtonTitle: "取消")
+        alert.addButtonWithTitle("加入")
+        alert.alertViewStyle = UIAlertViewStyle.SecureTextInput
+        alert.textFieldAtIndex(0)!.keyboardType = UIKeyboardType.NumberPad
+        alert.textFieldAtIndex(0)!.placeholder = "访问密码"
+        alert.show()
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            let group = displayedGroups[currentSelected]
+            let keyEntered = alertView.textFieldAtIndex(0)!.text
+            UserAPI.join(Var.uid, password: Var.password, gid: group.gid!, accessToken: keyEntered) {
+                let result = $0
+                // 成功加入群组
+                if result.status == 1 {
+                    ToastUtils.info(group.name, message: "成功加入")
+                } else {
+                    ToastUtils.error(group.name, message: result.info)
                 }
-            })
-        alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) {
-            _ in 
-            })
-        alert.addTextFieldWithConfigurationHandler() {
-            (textField) in
-            textField.placeholder = "访问密码"
-            textField.secureTextEntry = true
+            }
         }
-//        if let ppc = alert.popoverPresentationController {
-//            ppc.sourceView = tableView
-//        }
-        presentViewController(alert, animated: true, completion: nil)
     }
     
     /*

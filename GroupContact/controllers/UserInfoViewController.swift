@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserInfoViewController: UITableViewController, UITableViewDelegate {
+class UserInfoViewController: UITableViewController, UITableViewDelegate, UIActionSheetDelegate {
     
     @IBOutlet weak var avatarLabel: UILabel!
     
@@ -49,8 +49,6 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
         
         // tableView的基本设置
         tableView.delegate = self
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
         
         // 加为好友或取消好友的菜单
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "showMenu:")
@@ -75,86 +73,72 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate {
     // MARK: - 其他方法
     /* 弹出关于手机号的Actions */
     func showActionsOnPhone(phone: String) {
-        var alert = UIAlertController(title: phone, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        alert.addAction(UIAlertAction(title: "呼叫", style: UIAlertActionStyle.Default) {
-            _ in
-            UIApplication.sharedApplication().openURL(NSURL(string: "tel:\(phone)")!)
-            });
-        alert.addAction(UIAlertAction(title: "发送短信", style: UIAlertActionStyle.Default) {
-            _ in
-            UIApplication.sharedApplication().openURL(NSURL(string: "sms:\(phone)")!)
-            });
-        alert.addAction(UIAlertAction(title: "复制", style: UIAlertActionStyle.Default) {
-            _ in
-            UIPasteboard.generalPasteboard().string = phone
-            ToastUtils.info(phone, message: "复制成功")
-            });
-        alert.addAction(UIAlertAction(title: "取消", style: .Cancel) {
-            _ in
-            });
-        alert.modalPresentationStyle = .Popover
-        presentViewController(alert, animated: true, completion: nil)
+        let alert = UIActionSheet(title: phone, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "呼叫", "发送短信", "复制")
+        
+        alert.showInView(self.view)
     }
     
     /* 弹出关于邮箱号的Actions */
     func showActionsOnEmail(email: String) {
-        var alert = UIAlertController(title: email, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        alert.addAction(UIAlertAction(title: "发送邮件", style: UIAlertActionStyle.Default) {
-            _ in
-            UIApplication.sharedApplication().openURL(NSURL(string: "mailto:\(email)")!)
-        })
-        alert.addAction(UIAlertAction(title: "复制", style: UIAlertActionStyle.Default) {
-            _ in
-            UIPasteboard.generalPasteboard().string = email
-            ToastUtils.info(email, message: "复制成功")
-            })
-        alert.addAction(UIAlertAction(title: "取消", style: .Cancel) {
-            _ in
-            })
-        
-        alert.modalPresentationStyle = .Popover
-        
-        presentViewController(alert, animated: true, completion: nil)
+        let alert = UIActionSheet(title: email, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "发送邮件", "复制")
+        alert.showInView(self.view)
     }
     
     func showMenu(sender: UIBarButtonItem) {
-        var alert = UIAlertController(title: self.title, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         if fromUserFriends {
-            alert.addAction(UIAlertAction(title: "删除好友", style: UIAlertActionStyle.Destructive) {
-                _ in
-                UserAPI.deleteFriend(Var.uid, password: Var.password, fid: self.user.uid!) {
-                    let result = $0
-                    if result.status == 1 {
-                        ToastUtils.info("删除好友", message: "成功删除\(self.user.name)")
-                        self.navigationController?.popViewControllerAnimated(true)
-                    } else {
-                        ToastUtils.error("删除好友", message: result.info)
-                    }
-                }
-            })
+            let alert = UIActionSheet(title: "操作", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "删除好友")
+            alert.showInView(self.view)
         }
         if fromGroupMembers {
-            alert.addAction(UIAlertAction(title: "加为好友", style: UIAlertActionStyle.Default) {
-                let action = $0
-                UserAPI.addFriend(Var.uid, password: Var.password, name: self.user.name, phone: self.user.phone) {
-                    let result = $0
-                    if result.status == 1 {
-                        ToastUtils.info("添加好友", message: "成功添加\(self.user.name)")
-                        self.navigationController?.popViewControllerAnimated(true)
-                    } else {
-                        ToastUtils.error("添加好友", message: result.info)
-                    }
-                }
-            })
+            let alert = UIActionSheet(title: "操作", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "添加好友")
+            alert.showInView(self.view)
         }
-        alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) {
-            _ in
-            // 不关心
-        })
-        alert.modalPresentationStyle = .Popover
-        let ppc = alert.popoverPresentationController
-        ppc?.barButtonItem = sender
-        
-        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        if actionSheet.title == user.phone {
+            let phone = user.phone
+            if buttonIndex == 1 {
+                UIApplication.sharedApplication().openURL(NSURL(string: "tel:\(phone)")!)
+            } else if buttonIndex == 2 {
+                UIApplication.sharedApplication().openURL(NSURL(string: "sms:\(phone)")!)
+            } else if buttonIndex == 3 {
+                UIPasteboard.generalPasteboard().string = phone
+                ToastUtils.info(phone, message: "复制成功")
+            }
+            return
+        }
+        if actionSheet.title == emailLabel.text! {
+            let email = emailLabel.text!
+            if buttonIndex == 1 {
+                UIApplication.sharedApplication().openURL(NSURL(string: "mailto:\(email)")!)
+            } else if buttonIndex == 2 {
+                UIPasteboard.generalPasteboard().string = email
+                ToastUtils.info(email, message: "复制成功")
+            }
+            return
+        }
+        if fromGroupMembers {
+            UserAPI.addFriend(Var.uid, password: Var.password, name: self.user.name, phone: self.user.phone) {
+                let result = $0
+                if result.status == 1 {
+                    ToastUtils.info("添加好友", message: "成功添加\(self.user.name)")
+                    self.navigationController?.popViewControllerAnimated(true)
+                } else {
+                    ToastUtils.error("添加好友", message: result.info)
+                }
+            }
+            return
+        } else {
+            UserAPI.deleteFriend(Var.uid, password: Var.password, fid: self.user.uid!) {
+                let result = $0
+                if result.status == 1 {
+                    ToastUtils.info("删除好友", message: "成功删除\(self.user.name)")
+                    self.navigationController?.popViewControllerAnimated(true)
+                } else {
+                    ToastUtils.error("删除好友", message: result.info)
+                }
+            }
+        }
     }
 }

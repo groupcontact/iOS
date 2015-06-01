@@ -3,7 +3,7 @@ import UIKit
 /*
  * 个人主页, 主要是提供一系列菜单
  */
-class ProfileViewController: UITableViewController, UITableViewDelegate {
+class ProfileViewController: UITableViewController, UITableViewDelegate, UIAlertViewDelegate {
 
     // MARK: - IBOutlet成员列表
     @IBOutlet weak var avatarLabelView: NoClearLabel!
@@ -66,40 +66,33 @@ class ProfileViewController: UITableViewController, UITableViewDelegate {
             // 进入登录页面
             performSegueWithIdentifier("backLogin", sender: tableView)
         }
-       
     }
     
     // MARK: - 其他方法
     /* 弹出修改密码的窗口 */
     func changePassword() {
-        var alert = UIAlertController(title: "修改密码", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) {
-            if let action = $0 {
-                let keyEntered = (alert.textFields?.first as! UITextField).text
-                UserAPI.resetPassword(Var.uid, password: Var.password, newPassword: keyEntered) {
-                    let result = $0
-                    if result.status == 1 {
-                        Var.password = keyEntered
-                        ToastUtils.info("修改密码", message: "成功设置新密码")
-                    } else {
-                        ToastUtils.error("修改密码", message: result.info)
-                    }
+        let alert = UIAlertView(title: "修改密码", message: nil, delegate: self, cancelButtonTitle: "取消")
+        alert.addButtonWithTitle("确定")
+        alert.alertViewStyle = UIAlertViewStyle.SecureTextInput
+        let textField = alert.textFieldAtIndex(0)
+        textField?.placeholder = "六位数字新密码"
+        textField?.keyboardType = UIKeyboardType.NumberPad
+        alert.show()
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            let keyEntered = alertView.textFieldAtIndex(0)!.text
+            UserAPI.resetPassword(Var.uid, password: Var.password, newPassword: keyEntered) {
+                let result = $0
+                if result.status == 1 {
+                    Var.password = keyEntered
+                    ToastUtils.info("修改密码", message: "成功设置新密码")
+                } else {
+                    ToastUtils.error("修改密码", message: result.info)
                 }
             }
-            });
-        alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) {
-            if let action = $0 {
-                // 不关心
-            }
-            });
-        alert.addTextFieldWithConfigurationHandler() {
-            (textField) in
-            textField.placeholder = "六位数字新密码"
-            textField.secureTextEntry = true
-        };
-        if let ppc = alert.popoverPresentationController {
-            ppc.sourceView = tableView
         }
-        presentViewController(alert, animated: true, completion: nil)
     }
+
 }

@@ -35,8 +35,6 @@ class FriendViewController: UITableViewController, UITableViewDataSource, UITabl
         // tableView基本配置
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
         
         if (Var.friends.count > 0) {
             friends = Var.friends

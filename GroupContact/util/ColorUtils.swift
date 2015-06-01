@@ -28,7 +28,7 @@ struct ColorUtils {
     
     // 针对字符串给出颜色
     static func colorOf(key: String) -> UIColor {
-        return MATERIAL[abs(Int(key.javaHashValue)) % MATERIAL.count]
+        return MATERIAL[abs(key.hashValue) % MATERIAL.count]
     }
     
 }
