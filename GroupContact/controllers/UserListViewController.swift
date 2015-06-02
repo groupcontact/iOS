@@ -113,7 +113,7 @@ class UserListViewController: UITableViewController, UITableViewDataSource, UITa
     
     // MARK: - 其他方法
     func showMenu(sender: UIBarButtonItem) {
-        let alert = UIActionSheet(title: "操作", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "退出群组")
+        let alert = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "退出群组")
         alert.showInView(self.view)
     }
     

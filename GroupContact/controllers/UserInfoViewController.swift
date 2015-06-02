@@ -118,6 +118,9 @@ class UserInfoViewController: UITableViewController, UITableViewDelegate, UIActi
             }
             return
         }
+        if buttonIndex == 0 {
+            return
+        }
         if fromGroupMembers {
             UserAPI.addFriend(Var.uid, password: Var.password, name: self.user.name, phone: self.user.phone) {
                 let result = $0

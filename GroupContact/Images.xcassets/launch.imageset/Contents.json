@@ -7,12 +7,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "launch@2x.png"
+      "filename" : "应用图标120*120.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "launch@3x.png"
+      "filename" : "应用图标180*180copy.png"
     }
   ],
   "info" : {

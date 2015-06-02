@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>AA59839F-04A3-43D2-A0FE-2FFCB6EC7869</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>GroupContact</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A714B21B3B5B46F04AFAC74DC842D2A9DCFA4849</key>
 		<string>https://bitbucket.org/zhouhaibing089/groupcontact-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GroupContact.xcodeproj/project.xcworkspace</string>
+	<string>GroupContact.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A714B21B3B5B46F04AFAC74DC842D2A9DCFA4849</key>
